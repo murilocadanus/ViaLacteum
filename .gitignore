@@ -1,0 +1,6 @@
+build/*
+*.mode1v3
+*.pbxuser
+.DS_Store
+ViaLacteum.xcodeproj/xcuserdata/*
+ViaLacteum.xcodeproj/project.xcworkspace/xcuserdata/*

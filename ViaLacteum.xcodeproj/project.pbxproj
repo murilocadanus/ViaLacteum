@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E2CA5F921365A0BA00C9186A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5F911365A0BA00C9186A /* main.c */; };
+		E2CA5FAE1365E9B400C9186A /* libcurses.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA5FAC1365E9B400C9186A /* libcurses.dylib */; };
+		E2CA5FAF1365E9B400C9186A /* libncurses.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA5FAD1365E9B400C9186A /* libncurses.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +28,8 @@
 		E2CA5F8D1365A0BA00C9186A /* ViaLacteum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ViaLacteum; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CA5F911365A0BA00C9186A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		E2CA5F931365A0BA00C9186A /* ViaLacteum.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ViaLacteum.1; sourceTree = "<group>"; };
+		E2CA5FAC1365E9B400C9186A /* libcurses.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurses.dylib; path = usr/lib/libcurses.dylib; sourceTree = SDKROOT; };
+		E2CA5FAD1365E9B400C9186A /* libncurses.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libncurses.dylib; path = usr/lib/libncurses.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CA5FAE1365E9B400C9186A /* libcurses.dylib in Frameworks */,
+				E2CA5FAF1365E9B400C9186A /* libncurses.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,8 @@
 		E2CA5F821365A0BA00C9186A = {
 			isa = PBXGroup;
 			children = (
+				E2CA5FAC1365E9B400C9186A /* libcurses.dylib */,
+				E2CA5FAD1365E9B400C9186A /* libncurses.dylib */,
 				E2CA5F901365A0BA00C9186A /* ViaLacteum */,
 				E2CA5F8E1365A0BA00C9186A /* Products */,
 			);
