@@ -1,0 +1,198 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2CA5F921365A0BA00C9186A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5F911365A0BA00C9186A /* main.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2CA5F8B1365A0BA00C9186A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E2CA5F8D1365A0BA00C9186A /* ViaLacteum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ViaLacteum; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CA5F911365A0BA00C9186A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		E2CA5F931365A0BA00C9186A /* ViaLacteum.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ViaLacteum.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2CA5F8A1365A0BA00C9186A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2CA5F821365A0BA00C9186A = {
+			isa = PBXGroup;
+			children = (
+				E2CA5F901365A0BA00C9186A /* ViaLacteum */,
+				E2CA5F8E1365A0BA00C9186A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2CA5F8E1365A0BA00C9186A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2CA5F8D1365A0BA00C9186A /* ViaLacteum */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2CA5F901365A0BA00C9186A /* ViaLacteum */ = {
+			isa = PBXGroup;
+			children = (
+				E2CA5F911365A0BA00C9186A /* main.c */,
+				E2CA5F931365A0BA00C9186A /* ViaLacteum.1 */,
+			);
+			path = ViaLacteum;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2CA5F8C1365A0BA00C9186A /* ViaLacteum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2CA5F961365A0BA00C9186A /* Build configuration list for PBXNativeTarget "ViaLacteum" */;
+			buildPhases = (
+				E2CA5F891365A0BA00C9186A /* Sources */,
+				E2CA5F8A1365A0BA00C9186A /* Frameworks */,
+				E2CA5F8B1365A0BA00C9186A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViaLacteum;
+			productName = ViaLacteum;
+			productReference = E2CA5F8D1365A0BA00C9186A /* ViaLacteum */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2CA5F841365A0BA00C9186A /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E2CA5F871365A0BA00C9186A /* Build configuration list for PBXProject "ViaLacteum" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E2CA5F821365A0BA00C9186A;
+			productRefGroup = E2CA5F8E1365A0BA00C9186A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2CA5F8C1365A0BA00C9186A /* ViaLacteum */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2CA5F891365A0BA00C9186A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2CA5F921365A0BA00C9186A /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E2CA5F941365A0BA00C9186A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E2CA5F951365A0BA00C9186A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E2CA5F971365A0BA00C9186A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E2CA5F981365A0BA00C9186A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2CA5F871365A0BA00C9186A /* Build configuration list for PBXProject "ViaLacteum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CA5F941365A0BA00C9186A /* Debug */,
+				E2CA5F951365A0BA00C9186A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2CA5F961365A0BA00C9186A /* Build configuration list for PBXNativeTarget "ViaLacteum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CA5F971365A0BA00C9186A /* Debug */,
+				E2CA5F981365A0BA00C9186A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2CA5F841365A0BA00C9186A /* Project object */;
+}
