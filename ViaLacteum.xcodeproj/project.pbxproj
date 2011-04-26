@@ -1,0 +1,243 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2C70FB31367269100B34ECB /* zombie.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB11367269100B34ECB /* zombie.c */; };
+		E2C70FB91367503400B34ECB /* waves.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB71367503400B34ECB /* waves.c */; };
+		E2C70FBC136753C100B34ECB /* fire.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FBA136753C100B34ECB /* fire.c */; };
+		E2CA5F921365A0BA00C9186A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5F911365A0BA00C9186A /* main.c */; };
+		E2CA5FF31366027000C9186A /* blit.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF11366027000C9186A /* blit.c */; };
+		E2CA5FF6136602D100C9186A /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF4136602D100C9186A /* util.c */; };
+		E2E87278136781960063A902 /* menu.c in Sources */ = {isa = PBXBuildFile; fileRef = E2E87276136781960063A902 /* menu.c */; };
+		E2E8727A136786EF0063A902 /* libncurses.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E87279136786EF0063A902 /* libncurses.5.4.dylib */; };
+		E2E8727C136786F70063A902 /* libmenu.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E8727B136786F70063A902 /* libmenu.5.4.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2CA5F8B1365A0BA00C9186A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E2C70FB11367269100B34ECB /* zombie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zombie.c; sourceTree = "<group>"; };
+		E2C70FB21367269100B34ECB /* zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zombie.h; sourceTree = "<group>"; };
+		E2C70FB71367503400B34ECB /* waves.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = waves.c; sourceTree = "<group>"; };
+		E2C70FB81367503400B34ECB /* waves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waves.h; sourceTree = "<group>"; };
+		E2C70FBA136753C100B34ECB /* fire.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fire.c; sourceTree = "<group>"; };
+		E2C70FBB136753C100B34ECB /* fire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fire.h; sourceTree = "<group>"; };
+		E2CA5F8D1365A0BA00C9186A /* ViaLacteum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ViaLacteum; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CA5F911365A0BA00C9186A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		E2CA5FEF1365FF7400C9186A /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		E2CA5FF11366027000C9186A /* blit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blit.c; sourceTree = "<group>"; };
+		E2CA5FF21366027000C9186A /* blit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blit.h; sourceTree = "<group>"; };
+		E2CA5FF4136602D100C9186A /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		E2CA5FF5136602D100C9186A /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		E2E87276136781960063A902 /* menu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = menu.c; sourceTree = "<group>"; };
+		E2E87277136781960063A902 /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
+		E2E87279136786EF0063A902 /* libncurses.5.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libncurses.5.4.dylib; path = usr/lib/libncurses.5.4.dylib; sourceTree = SDKROOT; };
+		E2E8727B136786F70063A902 /* libmenu.5.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmenu.5.4.dylib; path = usr/lib/libmenu.5.4.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2CA5F8A1365A0BA00C9186A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2E8727C136786F70063A902 /* libmenu.5.4.dylib in Frameworks */,
+				E2E8727A136786EF0063A902 /* libncurses.5.4.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2CA5F821365A0BA00C9186A = {
+			isa = PBXGroup;
+			children = (
+				E2E8727B136786F70063A902 /* libmenu.5.4.dylib */,
+				E2E87279136786EF0063A902 /* libncurses.5.4.dylib */,
+				E2CA5F901365A0BA00C9186A /* ViaLacteum */,
+				E2CA5F8E1365A0BA00C9186A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2CA5F8E1365A0BA00C9186A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2CA5F8D1365A0BA00C9186A /* ViaLacteum */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2CA5F901365A0BA00C9186A /* ViaLacteum */ = {
+			isa = PBXGroup;
+			children = (
+				E2E87276136781960063A902 /* menu.c */,
+				E2E87277136781960063A902 /* menu.h */,
+				E2C70FB71367503400B34ECB /* waves.c */,
+				E2C70FB81367503400B34ECB /* waves.h */,
+				E2CA5F911365A0BA00C9186A /* main.c */,
+				E2CA5FEF1365FF7400C9186A /* defs.h */,
+				E2CA5FF11366027000C9186A /* blit.c */,
+				E2CA5FF21366027000C9186A /* blit.h */,
+				E2CA5FF4136602D100C9186A /* util.c */,
+				E2CA5FF5136602D100C9186A /* util.h */,
+				E2C70FB11367269100B34ECB /* zombie.c */,
+				E2C70FB21367269100B34ECB /* zombie.h */,
+				E2C70FBA136753C100B34ECB /* fire.c */,
+				E2C70FBB136753C100B34ECB /* fire.h */,
+			);
+			path = ViaLacteum;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2CA5F8C1365A0BA00C9186A /* ViaLacteum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2CA5F961365A0BA00C9186A /* Build configuration list for PBXNativeTarget "ViaLacteum" */;
+			buildPhases = (
+				E2CA5F891365A0BA00C9186A /* Sources */,
+				E2CA5F8A1365A0BA00C9186A /* Frameworks */,
+				E2CA5F8B1365A0BA00C9186A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViaLacteum;
+			productName = ViaLacteum;
+			productReference = E2CA5F8D1365A0BA00C9186A /* ViaLacteum */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2CA5F841365A0BA00C9186A /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E2CA5F871365A0BA00C9186A /* Build configuration list for PBXProject "ViaLacteum" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E2CA5F821365A0BA00C9186A;
+			productRefGroup = E2CA5F8E1365A0BA00C9186A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2CA5F8C1365A0BA00C9186A /* ViaLacteum */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2CA5F891365A0BA00C9186A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2CA5F921365A0BA00C9186A /* main.c in Sources */,
+				E2CA5FF31366027000C9186A /* blit.c in Sources */,
+				E2CA5FF6136602D100C9186A /* util.c in Sources */,
+				E2C70FB31367269100B34ECB /* zombie.c in Sources */,
+				E2C70FB91367503400B34ECB /* waves.c in Sources */,
+				E2C70FBC136753C100B34ECB /* fire.c in Sources */,
+				E2E87278136781960063A902 /* menu.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E2CA5F941365A0BA00C9186A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E2CA5F951365A0BA00C9186A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E2CA5F971365A0BA00C9186A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E2CA5F981365A0BA00C9186A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2CA5F871365A0BA00C9186A /* Build configuration list for PBXProject "ViaLacteum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CA5F941365A0BA00C9186A /* Debug */,
+				E2CA5F951365A0BA00C9186A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2CA5F961365A0BA00C9186A /* Build configuration list for PBXNativeTarget "ViaLacteum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CA5F971365A0BA00C9186A /* Debug */,
+				E2CA5F981365A0BA00C9186A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2CA5F841365A0BA00C9186A /* Project object */;
+}
