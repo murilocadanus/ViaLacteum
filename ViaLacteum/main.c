@@ -60,19 +60,63 @@ void init_screen()
 }
 
 void presentation()
-{   
-	blit_borders(COL_BLUE);
+{       
+    blit_borders(COL_BLUE);
     
-	SET_COLOR(COL_GREEN);
-	mvwprintw(term,8+y_ofs,25+x_ofs,"-- -= V-I-A-L-A-C-T-E-U-M =- --");
-	mvwprintw(term,11+y_ofs,27+x_ofs,  "");
-	SET_COLOR(COL_WHITE);
-	mvwprintw(term,22+y_ofs,29+x_ofs,    "Press any key to start");
-	SET_COLOR(COL_BKG);
+    SET_COLOR(COL_GREEN);
+    mvwprintw(term,8+y_ofs,25+x_ofs,"-- -= I-N-V-A-S-O-R-E-S =- --");
+    mvwprintw(term,11+y_ofs,27+x_ofs,  "");
     
-	while (wgetch(term) == ERR);
+    //init_color_pairs();
+    SET_COLOR(COL_WHITE);
+    mvwprintw(term, LINES - 22, 1 ,  "         #iiiii#     ");
+    mvwprintw(term, LINES - 21, 1 ,  "       #iEKWWWKEi#       ");
+    mvwprintw(term, LINES - 20, 1 ,  "      iEKKKW#WKKKEi      ");
+    mvwprintw(term, LINES - 19, 1 ,  "     #EWWKKW#WKKWWE#     ");
+    mvwprintw(term, LINES - 18, 1 ,  "    #EWKEKWKKKWKEKWE#    ");
+    mvwprintw(term, LINES - 17, 1 ,  "    #EW EWKWWWKWE WE#    ");
+    mvwprintw(term, LINES - 16, 1 ,  "    #EK  EEKKKEE  KE#    ");
+    mvwprintw(term, LINES - 15, 1 ,  "    #EK   EEKEE   KE#    ");
+    mvwprintw(term, LINES - 14, 1 ,  "    #EK    WWW    KE#    ");
+    mvwprintw(term, LINES - 13, 1 ,  "     iK    EWE    Ki     ");
+    mvwprintw(term, LINES - 12, 1 ,  "     #EK   EWE   KE#     ");
+    mvwprintw(term, LINES - 11, 1 ,  "     #EWEE E#E EEWE#     ");
+    mvwprintw(term, LINES - 10, 1 ,  "      #KW#KKKKK#WK#      ");
+    mvwprintw(term, LINES - 9, 1 ,   "       iWWWKEKWWWi       ");
+    mvwprintw(term, LINES - 8, 1 ,   "        #KWKEKWK#        ");
+    mvwprintw(term, LINES - 7, 1 ,   "         #KWWWK#         ");
+    mvwprintw(term, LINES - 6, 1 ,   "          #KWK#          ");
+    mvwprintw(term, LINES - 5, 1 ,   "           #i#           ");
     
-	wclear(term);
+    SET_COLOR(COL_WHITE);
+    mvwprintw(term, LINES - 22, 54 ,  "         #iiiii#     ");     
+    mvwprintw(term, LINES - 21, 54 ,  "       #iEKWWWKEi#       ");
+    mvwprintw(term, LINES - 20, 54 ,  "      iEKKKW#WKKKEi      ");
+    mvwprintw(term, LINES - 19, 54 ,  "     #EWWKKW#WKKWWE#     ");
+    mvwprintw(term, LINES - 18, 54 ,  "    #EWKEKWKKKWKEKWE#    ");
+    mvwprintw(term, LINES - 17, 54 ,  "    #EW EWKWWWKWE WE#    ");
+    mvwprintw(term, LINES - 16, 54 ,  "    #EK  EEKKKEE  KE#    ");
+    mvwprintw(term, LINES - 15, 54 ,  "    #EK   EEKEE   KE#    ");
+    mvwprintw(term, LINES - 14, 54 ,  "    #EK    WWW    KE#    ");
+    mvwprintw(term, LINES - 13, 54 ,  "     iK    EWE    Ki     ");
+    mvwprintw(term, LINES - 12, 54 ,  "     #EK   EWE   KE#     ");
+    mvwprintw(term, LINES - 11, 54 ,  "     #EWEE E#E EEWE#     ");
+    mvwprintw(term, LINES - 10, 54 ,  "      #KW#KKKKK#WK#      ");
+    mvwprintw(term, LINES - 9, 54 ,   "       iWWWKEKWWWi       ");
+    mvwprintw(term, LINES - 8, 54 ,   "        #KWKEKWK#        ");
+    mvwprintw(term, LINES - 7, 54 ,   "         #KWWWK#         ");
+    mvwprintw(term, LINES - 6, 54 ,   "          #KWK#          ");
+    mvwprintw(term, LINES - 5, 54 ,   "           #i#           ");
+    
+    SET_COLOR(COL_RED);
+    mvwprintw(term,22+y_ofs,28+x_ofs,    "Precione qualquer tecla");
+    SET_COLOR(COL_BKG);
+    
+    while (wgetch(term) == ERR);
+    
+    wclear(term);
+    
+    
 }
 
 void final()
@@ -292,7 +336,7 @@ void m_wait(long delay)
      
      return;
      */
-	usleep(delay);
+	usleep((int)delay);
 }
 
 void end_game()
