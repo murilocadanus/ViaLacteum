@@ -10,6 +10,8 @@
 		E2CA5F921365A0BA00C9186A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5F911365A0BA00C9186A /* main.c */; };
 		E2CA5FAE1365E9B400C9186A /* libcurses.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA5FAC1365E9B400C9186A /* libcurses.dylib */; };
 		E2CA5FAF1365E9B400C9186A /* libncurses.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA5FAD1365E9B400C9186A /* libncurses.dylib */; };
+		E2CA5FF31366027000C9186A /* blit.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF11366027000C9186A /* blit.c */; };
+		E2CA5FF6136602D100C9186A /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF4136602D100C9186A /* util.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,9 +29,13 @@
 /* Begin PBXFileReference section */
 		E2CA5F8D1365A0BA00C9186A /* ViaLacteum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ViaLacteum; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CA5F911365A0BA00C9186A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		E2CA5F931365A0BA00C9186A /* ViaLacteum.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ViaLacteum.1; sourceTree = "<group>"; };
 		E2CA5FAC1365E9B400C9186A /* libcurses.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurses.dylib; path = usr/lib/libcurses.dylib; sourceTree = SDKROOT; };
 		E2CA5FAD1365E9B400C9186A /* libncurses.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libncurses.dylib; path = usr/lib/libncurses.dylib; sourceTree = SDKROOT; };
+		E2CA5FEF1365FF7400C9186A /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		E2CA5FF11366027000C9186A /* blit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blit.c; sourceTree = "<group>"; };
+		E2CA5FF21366027000C9186A /* blit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blit.h; sourceTree = "<group>"; };
+		E2CA5FF4136602D100C9186A /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		E2CA5FF5136602D100C9186A /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +73,11 @@
 			isa = PBXGroup;
 			children = (
 				E2CA5F911365A0BA00C9186A /* main.c */,
-				E2CA5F931365A0BA00C9186A /* ViaLacteum.1 */,
+				E2CA5FEF1365FF7400C9186A /* defs.h */,
+				E2CA5FF11366027000C9186A /* blit.c */,
+				E2CA5FF21366027000C9186A /* blit.h */,
+				E2CA5FF4136602D100C9186A /* util.c */,
+				E2CA5FF5136602D100C9186A /* util.h */,
 			);
 			path = ViaLacteum;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2CA5F921365A0BA00C9186A /* main.c in Sources */,
+				E2CA5FF31366027000C9186A /* blit.c in Sources */,
+				E2CA5FF6136602D100C9186A /* util.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +211,7 @@
 				E2CA5F981365A0BA00C9186A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

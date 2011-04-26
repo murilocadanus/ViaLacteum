@@ -6,205 +6,114 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#include <curses.h>
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include <math.h>
+#include <curses.h>
+#include <unistd.h>
+#include <time.h>
+#include <sys/time.h>
+#include "defs.h"
 
-void init_color_pairs() {
-    short f, b;
-    for( f = 0; f < COLORS; ++f )
-        for( b = 0; b < COLORS; ++b )
-            init_pair( f * COLORS + b, f, b );
+int score = 0;
+int game_ended = 0;
+int x_ofs = 0;
+int y_ofs = 0;
+int term_x = 0;
+int term_y = 0;
+
+
+WINDOW *term; /* our terminal */
+
+void init_screen()
+{
+	term = initscr(); /* Initialize terminal */
+    
+	start_color(); /* Initialize colors */
+	init_pair(PC_WHITE,COLOR_WHITE,COLOR_BLACK);
+	init_pair(PC_RED,COLOR_RED,COLOR_BLACK);
+	init_pair(PC_GREEN,COLOR_GREEN,COLOR_BLACK);
+	init_pair(PC_YELLOW,COLOR_YELLOW,COLOR_BLACK);
+	init_pair(PC_BLUE,COLOR_BLUE,COLOR_BLACK);
+	init_pair(PC_MAGENTA,COLOR_MAGENTA,COLOR_BLACK);
+	init_pair(PC_CYAN,COLOR_CYAN,COLOR_BLACK);
+	SET_COLOR(COL_BKG);
+    
+	cbreak(); /* Disable line buffering and erase/kill characters */
+	noecho(); /* Don't echo characters */
+	nodelay(term,TRUE); /* Don't block while waiting for input */
+    
+	nonl(); /* Don't translate return into newline, only CR */
+	intrflush(term,FALSE); /* Do not flush input at ^C */
+	keypad(term,TRUE); /* Enable keypad */
+    
+	wrefresh(term);
 }
 
-#define SET_COLOR(fore, bg)                wattrset(stdscr, COLOR_PAIR(COLOR_##fore * COLORS + COLOR_##bg))
-
-#define PLANE1  "|\\"
-#define PLANE2 "}=-O>"
-#define PLANE3  "|/"
-#define PLANE	\
-{\
-move(h-1, 6);\
-printw(PLANE1);\
-move(h, 5);\
-printw(PLANE2);\
-move(h+1,6);\
-printw(PLANE3);\
-move(0,0);\
-refresh();\
+void presentation()
+{
+	int x,y;
+    
+	blit_borders(COL_BLUE);
+    
+	SET_COLOR(COL_GREEN);
+	mvwprintw(term,8+y_ofs,25+x_ofs,"-- -= V-I-A-L-A-C-T-E-U-M =- --");
+	mvwprintw(term,11+y_ofs,27+x_ofs,  "");
+	SET_COLOR(COL_WHITE);
+	mvwprintw(term,22+y_ofs,29+x_ofs,    "Press any key to start");
+	SET_COLOR(COL_BKG);
+    
+	while (wgetch(term) == ERR);
+    
+	wclear(term);
 }
 
-#define ENEMY1   "/|"
-#define ENEMY2 "<O-={"
-#define ENEMY3   "\\|"
-#define ENEMY(y,x)	\
-{\
-move(y-1, x+2);\
-printw(ENEMY1);\
-move(y, x);\
-printw(ENEMY2);\
-move(y+1,x+2);\
-printw(ENEMY3);\
+void final()
+{
+	printf("\n    Congratulations!\n");
+	printf("    You have defeated Xzarna, the Queen of the Zorxians!\n\n");
+    
+	printf("    With their queen gone all the zorxian space ships fled, desperately\n");
+	printf("    seeking to save themselves, and the earth attack failed.\n");
+	printf("    2 years later the zorxian race was completely defeated, and the\n");
+	printf("    human race completed its expansion in all the solar system.\n");
+	printf("    The starpilot who killed Xzarna was decorated, and his bravery is\n");
+	printf("    recorded in every history book.\n");
+	printf("\n                               *** THE END ***\n");
 }
-
-#define bullet(y,x)	\
-{\
-SET_COLOR(BLACK, CYAN);\
-mvaddch(y,x,'*');\
-}
-
-#define RF	(rand() / ((RAND_MAX)+1.))
-
-#define count(x)	sizeof(x)/sizeof(x[0])
-#define diff(x,y)	abs(x-y)
 
 int main()
 {
-    initscr();
-    start_color();
-    noecho();
-    raw();
-    cbreak();
-    timeout(0);
-    keypad(stdscr, 1);
+    srand((int)time(NULL));
+	init_screen();
     
-    init_color_pairs();
+	if (!right_size())
+	{
+		endwin();
+		fprintf(stderr,"Vialacteum must be run in an 80x25 terminal!\n");
+		return -1;
+	}
     
-    int x,y,p,h, key, c, die, score, bullets[50][2], enemies[50][3];
+	presentation();
     
-start:
+	/* Flush input */
+	while (wgetch(term) != ERR)
+		;
     
-    p=0;
-    h=13;
-    die = 0;
-    score = 0;
-    memset(bullets, 0, sizeof(bullets));
-    memset(enemies, 0, sizeof(enemies));
+	endwin();
     
-loop:
+	if (game_ended) final();
     
-    usleep(15000);
-    p++;
-    key = getch();
-    if(key>0)
-    {
-        switch(key)
-        {
-            case KEY_UP:
-                (h > 1) ? h -- : 0;
-                break;
-            case KEY_DOWN:
-                (h < 25) ? h ++ : 0;
-                break;
-            case ' ':
-                for(x=0;x<count(bullets);x++){
-                    if(!bullets[x][0]){
-                        bullets[x][0] = 5;
-                        bullets[x][1] = h;
-                        break;
-                    }
-                }
-                break;
-            case 27:
-                goto end;
-        }
-    }
+	printf("\nYou have made %d points!\n", score);
+	printf("-= V-I-A-L-A-C-T-E-U-M =-\n");
     
-    if((rand() & 0x3F) == 4){
-        for(x=0;x<count(enemies);x++){
-            if(!enemies[x][0]){
-                enemies[x][0] = 95;
-                enemies[x][1] = 8;
-                enemies[x][1] += (rand() & 1) ? -(rand() & 7)-1 : (rand() & 7)-1;
-                enemies[x][2] = 0;
-                break;
-            }
-        }
-    }
-    
-    for(x=0;x<100;x++)
-    {
-        for(y=0;y<26;y++)
-        {
-            y-=20;
-            if(sin((float)(x+p)/23) > ((float)y / 5.0f))
-                SET_COLOR(WHITE, CYAN);
-            else
-            {
-                SET_COLOR(GREEN, GREEN);
-                if(x == 6&& (h-18 > y))
-                    die = 1;
-            }
-            y+=20;
-            mvaddch(y,x,'.');
-        }
-    }
-    
-    for(x=0;x<count(bullets);x++){
-        
-        bullets[x][0] += (bullets[x][0]) ? 1 : 0;
-        if(bullets[x][0] > 99)
-            bullets[x][0] = 0;
-        else if(bullets[x][0])
-            bullet(bullets[x][1],bullets[x][0]);
-    }
-    
-    for(x=0;x<count(enemies);x++){
-        enemies[x][0] -= (enemies[x][0] && !enemies[x][2]) ? 1 : 0;
-        if(enemies[x][0] == 1){
-            enemies[x][0] = 0;
-            score --;
-        }
-        if(enemies[x][2]){
-            enemies[x][2]--;
-            SET_COLOR(RED,YELLOW);
-            if(!enemies[x][2]){
-                enemies[x][0] = 0;
-            }
-        }
-        else{
-            SET_COLOR(BLACK, CYAN);
-            if(enemies[x][0] && enemies[x][0] < 10 && diff(h, enemies[x][1]) < 3){
-                die= 1;
-                goto planedie;
-            }
-            for(y=0;y<count(bullets);y++){
-                if(bullets[y][0] && diff(enemies[x][0],bullets[y][0]) < 2 && diff(enemies[x][1],bullets[y][1]) < 2){
-                    score++;
-                planedie:
-                    SET_COLOR(RED, YELLOW);
-                    enemies[x][2] = 4;
-                    bullets[y][0] = 0;
-                    break;
-                }
-            }
-        }
-        if(enemies[x][0])
-            ENEMY(enemies[x][1],enemies[x][0]);
-    }
-    SET_COLOR(GREEN, BLACK);
-    move(26,0);
-    printw("Score: %i                   ", score);
-    if(!die)
-    {
-        SET_COLOR(BLUE, WHITE);
-        PLANE;
-    }
-    else
-    {
-        SET_COLOR(RED, YELLOW);
-        PLANE;
-        sleep(2);
-        goto start;
-    }
-    
-    goto loop;
-    
-end:
-    refresh();
-    endwin();
-    return 0;
-}
+	return 0;}
 
+// Returns true if terminal is 80x25
+int right_size()
+{
+	getmaxyx(term,term_y,term_x);
+    
+	x_ofs = (term_x-80)/2;
+	y_ofs = (term_y-25)/2;
+    
+	return ((term_x>=80)&&(term_y>=25));
+}
