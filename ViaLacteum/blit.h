@@ -28,4 +28,8 @@ void blit_score(int x, int y, int score);
 
 void blit_borders(int);
 
+void blit_scene();
+
+void init_color_pairs();
+
 #endif //_BLIT_H

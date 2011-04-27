@@ -24,3 +24,4 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs);
 int game(WINDOW *term, int x_ofs, int y_ofs);
 void final();
 int quit_game();
+int show_dialogs();

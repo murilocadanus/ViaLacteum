@@ -17,6 +17,8 @@ extern int term_x;
 extern int term_y;
 extern WINDOW *term; /* our terminal */
 
+#define SET_COLOR_DRAW(fore, bg)                wattrset(stdscr, COLOR_PAIR(COLOR_##fore * COLORS + COLOR_##bg))
+
 void blit_explosion_1(int x, int y)
 {
 /*
@@ -205,12 +207,12 @@ void clear_fire(int x, int y)
 void blit_player(int x,int y)
 {
 /* This is the player's ship:
-    @@
-    @#
-   @@#@--
-   @@ |
- #$  $#
-@#    @#
+   __
+   **
+  -||@--
+ / || 
+  /  \
+ /    \
 */
     
     if (is_y_range(y))
@@ -248,17 +250,17 @@ void blit_player(int x,int y)
     if (is_y_range(y+4))
     {
         SET_COLOR(COL_GRAY);
-        mvwprintw(term,y+4,x+1,"#$ ");
-        SET_COLOR(COL_DARKCYAN);
-        wprintw(term," $#");
+        mvwprintw(term,y+4,x+2,"$  $#");
     }
     
     if (is_y_range(y+5))
     {
         SET_COLOR(COL_GRAY);
-        mvwprintw(term,y+5,x,"@#  ");
-        SET_COLOR(COL_DARKCYAN);
-        wprintw(term,"  #@");
+        mvwprintw(term,y+5,x,"@#");
+        SET_COLOR(COL_BLACK);
+        wprintw(term,"    ");
+        SET_COLOR(COL_GRAY);
+        wprintw(term,"@#");
     }
     SET_COLOR(COL_BKG);
 }
@@ -270,7 +272,7 @@ void clear_player(int x,int y)
 	if (is_y_range(y+1))  mvwprintw(term,y+1,x+4,  "  ");
 	if (is_y_range(y+2))  mvwprintw(term,y+2,x+3,  "      ");
 	if (is_y_range(y+3))  mvwprintw(term,y+3,x+3,  "    ");
-	if (is_y_range(y+4))  mvwprintw(term,y+4,x+1,  "      ");
+	if (is_y_range(y+4))  mvwprintw(term,y+4,x+2,  "     ");
 	if (is_y_range(y+5))  mvwprintw(term,y+5,x,  "        ");
 }
 
@@ -317,4 +319,42 @@ void blit_borders(int color)
 		mvwaddch(term,y_ofs+25,x_ofs+80,(chtype)'+');
     
 	SET_COLOR(COL_BKG);
+}
+
+void blit_scene()
+{
+    //init_color_pairs();
+    
+    SET_COLOR(COL_GREEN);
+    mvwprintw(term,1,0,   "_______________________________________________________________________________");
+    mvwprintw(term,2,0,   "...............................................................................");
+    mvwprintw(term,3,0,   "                                                                               ");
+    mvwprintw(term,4,0,   "                                                                               ");
+    mvwprintw(term,5,0,   "                                                                               ");
+    mvwprintw(term,6,0,   "                                             ----------------                  ");  
+    mvwprintw(term,7,0,   "                                             |       |      |                  ");  
+    mvwprintw(term,8,0,   "                                             |       |      |                  ");
+    mvwprintw(term,9,0,   "                                             |       |      |                  ");
+    mvwprintw(term,10,0,  "                                             |-------|------|                  ");
+    mvwprintw(term,11,0,  "                                             |       |      |                  ");
+    mvwprintw(term,12,0,  "                                             |       |      |                  ");
+    mvwprintw(term,13,0,  "||                                           |       |      |                  ");
+    mvwprintw(term,14,0,  "||                                           ----------------                  ");
+    mvwprintw(term,15,0,  "||                                                                             ");
+    mvwprintw(term,16,0,  "||               ||                                                            ");                    
+    mvwprintw(term,17,0,  "||/----/         ||                                                            ");                    
+    mvwprintw(term,18,0,  "||---------------||                                                            ");                    
+    mvwprintw(term,19,0,  "||...............||                                                            ");                    
+    mvwprintw(term,20,0,  "||...............||                                                            ");                    
+    mvwprintw(term,21,0,  "||---------------||                                                            ");                   
+    mvwprintw(term,22,0,  "...............................................................................");
+    mvwprintw(term,23,0,  "_______________________________________________________________________________");    
+       
+}
+
+void init_color_pairs() {
+    short f, b;
+    for( f = 0; f < COLORS; ++f )
+        for( b = 0; b < COLORS; ++b )
+            init_pair( f * COLORS + b, f, b );
 }

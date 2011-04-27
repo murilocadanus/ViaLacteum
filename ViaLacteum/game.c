@@ -11,7 +11,8 @@
 int score = 0;
 int end_x;
 int game_ended = 0;
-
+char *scrolling;
+int scrolltick;
 const bitmask bitmask_player={0x38,0x7C,0xFE,0x7C,0x00};
 
 // Player dying
@@ -105,7 +106,7 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 		if (xs>MAXSPEED) xs=MAXSPEED;
 		if (xs<-MAXSPEED) xs=-MAXSPEED;
         
-		clear_player(x+x_ofs,18+y_ofs);
+		clear_player(x+x_ofs,17+y_ofs);
         
 		x+=xs;
         
@@ -115,7 +116,7 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 			(x>0)?(x=73):(x=0);
 		}
         
-		blit_player(x+x_ofs,18+y_ofs);
+		blit_player(x+x_ofs,17+y_ofs);
         
 		// Check for collision with zombies
 		if (collide_player(x))
@@ -264,13 +265,24 @@ int quit_game(WINDOW *term)
     return 0;
 }
 
-int game(WINDOW *term, int x_ofs, int y_ofs)
+int show_dialogs()
 {
+    mvprintw(LINES - 1, 4, "Cuidado com os cinzentos.");
+    
+    return 0;
+}
+
+int game(WINDOW *term, int x_ofs, int y_ofs)
+{    
     init_zombies();
     init_waves();
-
+    show_dialogs();
+    blit_scene();
+    
     while (move_player(term, x_ofs, y_ofs))
     {
+        blit_scene();
+        
         m_wait(DELAY);
 
         delete_zombies();
