@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28A83C5B1367910D00C4084A /* menu.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5A1367910C00C4084A /* menu.c */; };
+		28A83C5F136794EF00C4084A /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5D136794EF00C4084A /* game.c */; };
 		E2C70FB31367269100B34ECB /* zombie.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB11367269100B34ECB /* zombie.c */; };
 		E2C70FB91367503400B34ECB /* waves.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB71367503400B34ECB /* waves.c */; };
 		E2C70FBC136753C100B34ECB /* fire.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FBA136753C100B34ECB /* fire.c */; };
 		E2CA5F921365A0BA00C9186A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5F911365A0BA00C9186A /* main.c */; };
 		E2CA5FF31366027000C9186A /* blit.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF11366027000C9186A /* blit.c */; };
 		E2CA5FF6136602D100C9186A /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF4136602D100C9186A /* util.c */; };
-		E2E87278136781960063A902 /* menu.c in Sources */ = {isa = PBXBuildFile; fileRef = E2E87276136781960063A902 /* menu.c */; };
 		E2E8727A136786EF0063A902 /* libncurses.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E87279136786EF0063A902 /* libncurses.5.4.dylib */; };
 		E2E8727C136786F70063A902 /* libmenu.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E8727B136786F70063A902 /* libmenu.5.4.dylib */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28A83C5A1367910C00C4084A /* menu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = menu.c; sourceTree = "<group>"; };
+		28A83C5C1367913C00C4084A /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
+		28A83C5D136794EF00C4084A /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
+		28A83C5E136794EF00C4084A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		E2C70FB11367269100B34ECB /* zombie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zombie.c; sourceTree = "<group>"; };
 		E2C70FB21367269100B34ECB /* zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zombie.h; sourceTree = "<group>"; };
 		E2C70FB71367503400B34ECB /* waves.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = waves.c; sourceTree = "<group>"; };
@@ -44,8 +49,6 @@
 		E2CA5FF21366027000C9186A /* blit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blit.h; sourceTree = "<group>"; };
 		E2CA5FF4136602D100C9186A /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
 		E2CA5FF5136602D100C9186A /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
-		E2E87276136781960063A902 /* menu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = menu.c; sourceTree = "<group>"; };
-		E2E87277136781960063A902 /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
 		E2E87279136786EF0063A902 /* libncurses.5.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libncurses.5.4.dylib; path = usr/lib/libncurses.5.4.dylib; sourceTree = SDKROOT; };
 		E2E8727B136786F70063A902 /* libmenu.5.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmenu.5.4.dylib; path = usr/lib/libmenu.5.4.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -84,8 +87,6 @@
 		E2CA5F901365A0BA00C9186A /* ViaLacteum */ = {
 			isa = PBXGroup;
 			children = (
-				E2E87276136781960063A902 /* menu.c */,
-				E2E87277136781960063A902 /* menu.h */,
 				E2C70FB71367503400B34ECB /* waves.c */,
 				E2C70FB81367503400B34ECB /* waves.h */,
 				E2CA5F911365A0BA00C9186A /* main.c */,
@@ -98,6 +99,10 @@
 				E2C70FB21367269100B34ECB /* zombie.h */,
 				E2C70FBA136753C100B34ECB /* fire.c */,
 				E2C70FBB136753C100B34ECB /* fire.h */,
+				28A83C5A1367910C00C4084A /* menu.c */,
+				28A83C5C1367913C00C4084A /* menu.h */,
+				28A83C5D136794EF00C4084A /* game.c */,
+				28A83C5E136794EF00C4084A /* game.h */,
 			);
 			path = ViaLacteum;
 			sourceTree = "<group>";
@@ -155,7 +160,8 @@
 				E2C70FB31367269100B34ECB /* zombie.c in Sources */,
 				E2C70FB91367503400B34ECB /* waves.c in Sources */,
 				E2C70FBC136753C100B34ECB /* fire.c in Sources */,
-				E2E87278136781960063A902 /* menu.c in Sources */,
+				28A83C5B1367910D00C4084A /* menu.c in Sources */,
+				28A83C5F136794EF00C4084A /* game.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

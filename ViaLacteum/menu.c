@@ -1,34 +1,9 @@
-//
-//  menu.c
-//  ViaLacteum
-//
-//  Created by Marlus Costa on 26/04/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #include "menu.h"
-#include "defs.h"
+#include "game.h"
 
-//const char *choices_menu[] = {
-//    "Novo Jogo",
-//    "Opcoes",    
-//    "Creditos",
-//    "Sair",
-//};
-//
-//
-//const char *choices_menu_description[] = {
-//    "",
-//    "",    
-//    "",
-//    "",
-//};
-
-const char *choices_menu = "Novo Jogo";
-const char *choices_menu_description = "";
-
-int menu(WINDOW *term)
-{    
+int menu(WINDOW *term, int x_ofs, int y_ofs)
+{	       
+    int option_selected = 0;
     
     ITEM **my_items;
 	int c;				
@@ -36,7 +11,7 @@ int menu(WINDOW *term)
     WINDOW *my_menu_win;
     int n_choices, i;
 	
-	// Initialize curses
+	/* Initialize curses */
 	initscr();
 	start_color();
     cbreak();
@@ -51,15 +26,18 @@ int menu(WINDOW *term)
     mvprintw( LINES - 18, 1, "|   | | | |   | |     | |   _   | _____| ||       ||   |  | |   |___  _____| |");
     mvprintw( LINES - 17, 1, "|___| |_|  |__|  |___|  |__| |__||_______||_______||___|  | |_______||_______|");
     
-    keypad(stdscr, TRUE);
-    init_pair(1, COLOR_RED, COLOR_BLACK);
     
-	// Create items
+	keypad(stdscr, TRUE);
+	init_pair(1, COLOR_RED, COLOR_BLACK);
     
-    n_choices = ARRAY_SIZE(choices_menu);
-    my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));
-    for(i = 0; i < n_choices; ++i)
-        my_items[i] = new_item(choices_menu[i], choices_menu_description[i]);
+	/* Create items */
+    n_choices = 5;
+    my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));    
+    my_items[0] = new_item((char *)"Novo Jogo", (char *)"");
+    my_items[1] = new_item((char *)"Opcoes ", (char *)"");
+    my_items[2] = new_item((char *)"Creditos", (char *)"");
+    my_items[3] = new_item((char *)"Sair", (char *)"");
+    my_items[4] = new_item((char *)NULL, (char *)"");
     
 	// Crate menu
 	my_menu = new_menu((ITEM **)my_items);
@@ -81,7 +59,6 @@ int menu(WINDOW *term)
 	mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
 	mvwhline(my_menu_win, 2, 1, ACS_HLINE, 38);
 	mvwaddch(my_menu_win, 2, 39, ACS_RTEE);
-	//mvprintw(LINES - 2, 0, "ESC to exit");
     mvprintw(LINES - 3, 4, "Pressione <ENTER> para escolher a opcao desejada");
 	mvprintw(LINES - 2, 4, "Use as setas para navegar");
 	refresh();
@@ -90,8 +67,10 @@ int menu(WINDOW *term)
 	post_menu(my_menu);
 	wrefresh(my_menu_win);
     
-	while((c = wgetch(my_menu_win)) != 27)
-	{           
+	while(!option_selected)
+	{   
+        c = wgetch(my_menu_win);
+        
         switch(c)
         {	
             case KEY_DOWN:
@@ -100,31 +79,33 @@ int menu(WINDOW *term)
 			case KEY_UP:
 				menu_driver(my_menu, REQ_UP_ITEM);         
                 break;
-			case 13: // Enter
-                //mvprintw(LINES - 1, 0, "Item selected is : %s", item_name(current_item(my_menu)));
+			case ENTER_KEY: // Enter
                 
-                if (strcmp(item_name(current_item(my_menu)), "Sair") == 0)
+                if (strcmp(item_name(current_item(my_menu)), "Novo Jogo") == 0)
                 {
-                    return 0;
+                    option_selected = NOVO_JOGO;
                 }
-                else
+                else if (strcmp(item_name(current_item(my_menu)), "Sair") == 0)
                 {
-                    mvprintw(LINES - 1, 0, "Go to game...");                    
+                    option_selected = SAIR;
                 }
                 
 				break;
 		}
         wrefresh(my_menu_win);
         refresh();
-	}	
+	}
     
-	// Unpost and free all the memory taken up
+    wclear(term);
+    
+	/* Unpost and free all the memory taken up */
     unpost_menu(my_menu);
     free_menu(my_menu);
     for(i = 0; i < n_choices; ++i)
         free_item(my_items[i]);
 	endwin();
-    //return 0;
+    
+    return option_selected;
 }
 
 void print_in_middle_menu_win_example(WINDOW *win, int starty, int startx, int width, char *string, chtype color)
@@ -149,3 +130,4 @@ void print_in_middle_menu_win_example(WINDOW *win, int starty, int startx, int w
 	wattroff(win, color);
 	refresh();
 }
+

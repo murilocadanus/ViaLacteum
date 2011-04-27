@@ -48,4 +48,11 @@
 
 #define COL_BKG          COL_BLUE
 
+// MENU
+#define NOVO_JOGO 1
+#define OPCOES 2
+#define CREDITOS 3
+#define SAIR 4
+
+
 #endif //_DEFS_H
