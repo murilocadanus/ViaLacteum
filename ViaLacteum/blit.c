@@ -134,19 +134,38 @@ void clear_fire(int x, int y)
 	}
 }
 
-void blit_player(int x,int y)
+/*void blit_player(int x,int y)
 {
-/* This is the player's ship:
-  /^\
- | _ |
-< /_\ >
- ^^^^^
-*/
-    
+ This is the player's ship:
+ ABCDEFGHIJKLMNOP
+ QRSTUVWXYZABCDEF
+ GHIJKLMNOPQRSTUV
+ WXYZABCDEFGHIJKL
+ MNOPQRSTUVWXYZAB
+ CDEFGHIJKLMNOPQR
+ STUVWXYZABCDEFGH
+ IJKLMNOPQRSTUVWX
+ YZABCDEFGHIJKLMN
+ OPQRSTUVWXYZABCD
+ EFGHIJKLMNOPQRST
+ UVWXYZABCDEFGHIJ
+ KLMNOPQRSTUVWXYZ
+ ABCDEFGHIJKLMNOP
+ QRSTUVWXYZABCDEF
+ GHIJKLMNOPQRSTUV
+ WXYZABCDEFGHIJKL
+ MNOPQRSTUVWXYZAB
+ CDEFGHIJKLMNOPQR
+ STUVWXYZABCDEFGH
+ IJKLMNOPQRSTUVWX
+ YZABCDEFGHIJKLMN
+ OPQRSTUVWXYZABCD
+ EFGHIJKLMNOPQRST
+
 	if (is_y_range(y))
 	{
 		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y,x+2,  "/^\\");
+		mvwprintw(term,y,x+2,  "ABCD");
 	}
 	
 	if (is_y_range(y+1))
@@ -181,14 +200,78 @@ void blit_player(int x,int y)
     
 	SET_COLOR(COL_BKG);
 }
+*/
+    
+void blit_player(int x,int y)
+{
+/* This is the player's ship:
+    @@
+    @#
+   @@#@--
+   @@ |
+ #$  $#
+@#    @#
+*/
+    
+    if (is_y_range(y))
+    {
+        SET_COLOR(COL_DARKRED);
+        mvwprintw(term,y,x+4,  "@@");
+    }
+    
+    if (is_y_range(y+1))
+    {
+        SET_COLOR(COL_DARKRED);
+        mvwprintw(term,y+1,x+4,"@#");
+    }
+    
+    if (is_y_range(y+2))
+    {
+        SET_COLOR(COL_GRAY);
+        mvwprintw(term,y+2,x+3,"@@");
+        SET_COLOR(COL_DARKCYAN);
+        wprintw(term,"#");
+        SET_COLOR(COL_GRAY);
+        wprintw(term,"@");
+        SET_COLOR(COL_RED);
+        wprintw(term,"--");
+    }
+    
+    if (is_y_range(y+3))
+    {
+        SET_COLOR(COL_YELLOW);
+        mvwprintw(term,y+3,x+3,"@@ ");
+        SET_COLOR(COL_RED);
+        wprintw(term,"|");
+    }
+    
+    if (is_y_range(y+4))
+    {
+        SET_COLOR(COL_GRAY);
+        mvwprintw(term,y+4,x+1,"#$ ");
+        SET_COLOR(COL_DARKCYAN);
+        wprintw(term," $#");
+    }
+    
+    if (is_y_range(y+5))
+    {
+        SET_COLOR(COL_GRAY);
+        mvwprintw(term,y+5,x,"@#  ");
+        SET_COLOR(COL_DARKCYAN);
+        wprintw(term,"  #@");
+    }
+    SET_COLOR(COL_BKG);
+}
 
 void clear_player(int x,int y)
 {
 	SET_COLOR(COL_BKG);
-	if (is_y_range(y)) mvwprintw(term,y,x+2,    "   ");
-	if (is_y_range(y+1)) mvwprintw(term,y+1,x+1, "     ");
-	if (is_y_range(y+2)) mvwprintw(term,y+2,x,  "       ");
-	if (is_y_range(y+3)) mvwprintw(term,y+3,x+1, "     ");
+	if (is_y_range(y))    mvwprintw(term,y,x+4,    "  ");
+	if (is_y_range(y+1))  mvwprintw(term,y+1,x+4,  "  ");
+	if (is_y_range(y+2))  mvwprintw(term,y+2,x+3,  "      ");
+	if (is_y_range(y+3))  mvwprintw(term,y+3,x+3,  "    ");
+	if (is_y_range(y+4))  mvwprintw(term,y+4,x+1,  "      ");
+	if (is_y_range(y+5))  mvwprintw(term,y+5,x,  "        ");
 }
 
 void blit_score(int x, int y, int score)

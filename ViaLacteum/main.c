@@ -231,7 +231,7 @@ int move_player()
 		if (xs>MAXSPEED) xs=MAXSPEED;
 		if (xs<-MAXSPEED) xs=-MAXSPEED;
         
-		clear_player(x+x_ofs,21+y_ofs);
+		clear_player(x+x_ofs,18+y_ofs);
         
 		x+=xs;
         
@@ -241,7 +241,7 @@ int move_player()
 			(x>0)?(x=73):(x=0);
 		}
         
-		blit_player(x+x_ofs,21+y_ofs);
+		blit_player(x+x_ofs,18+y_ofs);
         
 		// Check for collision with zombies
 		if (collide_player(x))
