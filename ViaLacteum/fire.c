@@ -8,12 +8,12 @@
 
 #include "fire.h"
 #include "blit.h"
-#include "zombie.h"
+#include "foe.h"
 
 
 extern int x_ofs;
 extern int y_ofs;
-extern zombie all_zombies[NUM_ZOMBIES];
+extern foe all_foes[NUM_FOES];
 
 fire all_fires[NUM_FIRES];
 
@@ -77,9 +77,9 @@ void move_fires()
 			}
 			else
 			{
-				while ((n = collide_zombies(all_fires[i].x,all_fires[i].y))>=0)
+				while ((n = collide_foes(all_fires[i].x,all_fires[i].y))>=0)
 				{
-					blow_zombie(n);
+					blow_foe(n);
 					all_fires[i].x = -1;
 				}
 			}

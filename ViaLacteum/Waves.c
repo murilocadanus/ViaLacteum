@@ -7,7 +7,7 @@
 //
 
 #include "waves.h"
-#include "zombie.h"
+#include "foe.h"
 #include "blit.h"
 #include "util.h"
 #include "defs.h"
@@ -19,7 +19,7 @@ extern WINDOW *term;
 
 extern int score;
 
-extern zombie all_zombies[NUM_ZOMBIES];
+extern foe all_foes[NUM_FOES];
 
 extern const bitmask bitmask_zombie;
 
@@ -142,41 +142,41 @@ int create_zombies()
     while( moment == ( ((unsigned char)wave[lev_count]<<8) | (unsigned char)wave[lev_count+1] ) )
     {
         if ( (wave[lev_count+8] < 0) ||
-            ((all_zombies[(int)wave[lev_count+8]].type != AT_NONE) &&
-             (all_zombies[(int)wave[lev_count+8]].type != AT_BIG_EXP) &&
-             (all_zombies[(int)wave[lev_count+8]].type != AT_LIT_EXP) &&
-             (all_zombies[(int)wave[lev_count+8]].type != AT_LAST)) )
+            ((all_foes[(int)wave[lev_count+8]].type != AT_NONE) &&
+             (all_foes[(int)wave[lev_count+8]].type != AT_BIG_EXP) &&
+             (all_foes[(int)wave[lev_count+8]].type != AT_LIT_EXP) &&
+             (all_foes[(int)wave[lev_count+8]].type != AT_LAST)) )
         {
             int ar_num;
             int n;
             
             ar_num = wave[lev_count+2];
             
-            all_zombies[ar_num].type = wave[lev_count+3];
+            all_foes[ar_num].type = wave[lev_count+3];
             
-            switch (all_zombies[ar_num].type)
+            switch (all_foes[ar_num].type)
             {
                 case AT_LITTLE:
-                    all_zombies[ar_num].blit = blit_zombie;
-                    all_zombies[ar_num].clear = clear_zombie;
+                    all_foes[ar_num].blit = blit_zombie;
+                    all_foes[ar_num].clear = clear_zombie;
                     for (n=0;n<MAX_HEIGHT;n++)
-                        all_zombies[ar_num].collide[n] = bitmask_zombie[n];
+                        all_foes[ar_num].collide[n] = bitmask_zombie[n];
                 break;
                 case AT_NONE:
                     ended = 1;
                 break;
             }
             
-            all_zombies[ar_num].x = wave[lev_count+4];
-            all_zombies[ar_num].y = wave[lev_count+5];
-            all_zombies[ar_num].state = wave[lev_count+6];
+            all_foes[ar_num].x = wave[lev_count+4];
+            all_foes[ar_num].y = wave[lev_count+5];
+            all_foes[ar_num].state = wave[lev_count+6];
             switch (wave[lev_count+7])
             {
                 case MOVE_STRAIGHT:
-                    all_zombies[ar_num].move = move_zombie_straight;
+                    all_foes[ar_num].move = move_foe_straight;
                     break;
             }
-            all_zombies[ar_num].type = wave[lev_count+3];
+            all_foes[ar_num].type = wave[lev_count+3];
         }
         
         lev_count += FRAME_SIZE;

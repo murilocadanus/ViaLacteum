@@ -12,7 +12,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include "defs.h"
-#include "zombie.h"
+#include "foe.h"
 #include "blit.h"
 #include "waves.h"
 #include "fire.h"

@@ -42,7 +42,7 @@ int collide_player(int x)
 		{
 			if ( (bitmask_player[check_y] & (0x80 >> check_x)) != 0 )
 			{
-				if (collide_zombies(x+check_x,21+check_y)>=0)
+				if (collide_foes(x+check_x,21+check_y)>=0)
 					return 1;
 			}
 		}
@@ -226,13 +226,13 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs)
         
 		m_wait(DELAY);
         
-		delete_zombies();
+		delete_foes();
 		delete_fires();
         
 		move_fires();
-		move_zombies();
+		move_foes();
         
-		blit_zombies();
+		blit_foes();
 		blit_fires();
 		blit_score(74+x_ofs,y_ofs,score);
 		blit_borders(COL_RED);
@@ -266,21 +266,21 @@ int quit_game(WINDOW *term)
 
 int game(WINDOW *term, int x_ofs, int y_ofs)
 {
-    init_zombies();
+    init_foes();
     init_waves();
 
     while (move_player(term, x_ofs, y_ofs))
     {
         m_wait(DELAY);
 
-        delete_zombies();
+        delete_foes();
         delete_fires();
 
         // move functions also performs collision check
         move_fires();
-        move_zombies();
+        move_foes();
 
-        blit_zombies();
+        blit_foes();
         blit_fires();
         blit_score(74+x_ofs,y_ofs,score);
         blit_borders(COL_GREEN);
