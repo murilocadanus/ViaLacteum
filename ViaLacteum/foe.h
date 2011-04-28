@@ -1,13 +1,13 @@
 //
-//  zombie.h
+//  foe.h
 //  ViaLacteum
 //
 //  Created by Murilo Costa on 26/04/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef _ZOMBIE_H
-#define _ZOMBIE_H
+#ifndef _FOE_H
+#define _FOE_H
 
 #define AT_NONE    -1
 #define AT_LAST    -2
@@ -33,29 +33,29 @@ typedef struct
 	void (*move)(void *);
 	short int state;
 	bitmask collide;
-} zombie;
+} foe;
 
-#define NUM_ZOMBIES 10
+#define NUM_FOES 10
 
-// Zombie movement
-void move_zombie_straight(void *);
+// Foe movement
+void move_foe_straight(void *);
 
-// Initialize zombies
-void init_zombies();
+// Initialize foes
+void init_foes();
 
-// Draws all zombies
-void blit_zombies();
+// Draws all foes
+void blit_foes();
 
-// Deletes all zombies
-void delete_zombies();
+// Deletes all foes
+void delete_foes();
 
-// Makes all zombies move
-void move_zombies();
+// Makes all foes move
+void move_foes();
 
-// Blows zombie num and update score
-void blow_zombie(int);
+// Blows foe num and update score
+void blow_foe(int);
 
-// Check collisions for zombies
-int collide_zombies(int, int);
+// Check collisions for foes
+int collide_foes(int, int);
 
-#endif //_ZOMBIE_H
+#endif //_FOE_H

@@ -13,15 +13,14 @@ typedef struct
 {
 	int x;
 	int y;
+    int side;
 	void (*blit)(int,int);
 	void (*clear)(int,int);
-    //	int state; // for future use
-    //	int type;  // for future use
 } fire;
 
 #define NUM_FIRES 25
 
-void new_fire(int, int);
+void new_fire(int, int, int);
 void init_fires();
 void blit_fires();
 void delete_fires();
