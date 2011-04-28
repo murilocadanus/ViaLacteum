@@ -17,6 +17,8 @@ extern int term_x;
 extern int term_y;
 extern WINDOW *term; /* our terminal */
 
+#define SET_COLOR_DRAW(fore, bg)                wattrset(stdscr, COLOR_PAIR(COLOR_##fore * COLORS + COLOR_##bg))
+
 void blit_explosion_1(int x, int y)
 {
 /*
@@ -340,4 +342,42 @@ void blit_borders(int color)
 		mvwaddch(term,y_ofs+25,x_ofs+80,(chtype)'+');
     
 	SET_COLOR(COL_BKG);
+}
+
+void blit_scene()
+{
+    //init_color_pairs();
+    
+    SET_COLOR(COL_GREEN);
+    mvwprintw(term,1,0,   "_______________________________________________________________________________");
+    mvwprintw(term,2,0,   "...............................................................................");
+    mvwprintw(term,3,0,   "                                                                               ");
+    mvwprintw(term,4,0,   "                                                                               ");
+    mvwprintw(term,5,0,   "                                                                               ");
+    mvwprintw(term,6,0,   "                                             ----------------                  ");  
+    mvwprintw(term,7,0,   "                                             |       |      |                  ");  
+    mvwprintw(term,8,0,   "                                             |       |      |                  ");
+    mvwprintw(term,9,0,   "                                             |       |      |                  ");
+    mvwprintw(term,10,0,  "                                             |-------|------|                  ");
+    mvwprintw(term,11,0,  "                                             |       |      |                  ");
+    mvwprintw(term,12,0,  "                                             |       |      |                  ");
+    mvwprintw(term,13,0,  "||                                           |       |      |                  ");
+    mvwprintw(term,14,0,  "||                                           ----------------                  ");
+    mvwprintw(term,15,0,  "||                                                                             ");
+    mvwprintw(term,16,0,  "||               ||                                                            ");                    
+    mvwprintw(term,17,0,  "||/----/         ||                                                            ");                    
+    mvwprintw(term,18,0,  "||---------------||                                                            ");                    
+    mvwprintw(term,19,0,  "||...............||                                                            ");                    
+    mvwprintw(term,20,0,  "||...............||                                                            ");                    
+    mvwprintw(term,21,0,  "||---------------||                                                            ");                   
+    mvwprintw(term,22,0,  "...............................................................................");
+    mvwprintw(term,23,0,  "_______________________________________________________________________________");    
+       
+}
+
+void init_color_pairs() {
+    short f, b;
+    for( f = 0; f < COLORS; ++f )
+        for( b = 0; b < COLORS; ++b )
+            init_pair( f * COLORS + b, f, b );
 }

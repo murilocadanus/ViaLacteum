@@ -31,6 +31,7 @@
 
 #define SET_COLOR(x) wcolor_set(term,((x)>10)?((x)-10):(x),NULL); ((x)>10)?wattron(term,A_BOLD):wattroff(term,A_BOLD);
 
+#define COL_BLACK         0
 #define COL_GRAY          1
 #define COL_DARKRED       2
 #define COL_DARKGREEN     3

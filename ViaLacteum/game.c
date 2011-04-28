@@ -269,13 +269,24 @@ int quit_game(WINDOW *term)
     return 0;
 }
 
-int game(WINDOW *term, int x_ofs, int y_ofs)
+int show_dialogs()
 {
-    //init_foes();
-    //init_waves();
+    mvprintw(LINES - 1, 4, "Cuidado com os cinzentos.");
+    
+    return 0;
+}
 
+int game(WINDOW *term, int x_ofs, int y_ofs)
+{    
+    init_foes();
+    init_waves();
+    show_dialogs();
+    blit_scene();
+    
     while (move_player(term, x_ofs, y_ofs))
     {
+        blit_scene();
+        
         m_wait(DELAY);
 
         //delete_foes();
