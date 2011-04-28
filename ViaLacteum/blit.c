@@ -99,7 +99,7 @@ void blit_the_grey(int x,int y)
 */
 	if (is_y_range(y))
 	{
-		SET_COLOR(COL_GRAY);
+		SET_COLOR(COL_RED);
 		mvwprintw(term,y,x,"-----");
 	}
 	if (is_y_range(y+1))
@@ -116,17 +116,17 @@ void blit_the_grey(int x,int y)
 	if (is_y_range(y+2))
 	{
 		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y,x+2,"-");
+		mvwprintw(term,y+2,x+2,"-");
 	}
 	if (is_y_range(y+3))
 	{
 		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y,x,"/ # \\");
+		mvwprintw(term,y+3,x,"/ # \\");
 	}
 	if (is_y_range(y+4))
 	{
 		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y,x+1," / \\");
+		mvwprintw(term,y+4,x+1,"/ \\");
 	}
     
 	SET_COLOR(COL_BKG);

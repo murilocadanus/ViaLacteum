@@ -21,21 +21,6 @@ int exploding = 0;
 
 int collide_player(int x)
 {
-	/* This collision algorithm is probably faster but must be completed */
-    /*	int i;
-     int rel_x,rel_y;
-     for (i=0;i<NUMALIENS;i++)
-     {
-     if (all_aliens[i].type!=AT_NONE)
-     {
-     rel_x=x-all_aliens[i].x;
-     rel_y=21-all_aliens[i].y;
-     // ...... 
-     }
-     }
-     return 0; */
-    
-	/* For now I will use this... it can be good anyway */
 	int check_x,check_y;
 	for (check_y=0; check_y<MAX_HEIGHT; check_y++)
 	{
@@ -104,7 +89,7 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 		}
 		last_c = c;
         
-		/* Check limits */
+		// Check limits
 		if (xs>MAXSPEED) xs=MAXSPEED;
 		if (xs<-MAXSPEED) xs=-MAXSPEED;
         
@@ -113,10 +98,10 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
         
 		x+=xs;
         
-		if ( (x<0) || (x>73) )
+		if ( (x<0) || (x>72) )
 		{
 			xs = 0;
-			(x>0)?(x=73):(x=0);
+			(x>0)?(x=72):(x=0);
 		}
         
         if(side)
@@ -191,34 +176,6 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 
 void m_wait(long delay)
 {
-    /*
-     // This is an algorithm I've tested to uniform speed on every CPU, but
-     // gettimeofday resolution isn't very high and I got also very strange
-     // and not uniform results...
-     
-     static struct timeval last={0,0};
-     struct timeval now;
-     long diff;
-     
-     if (gettimeofday(&now,NULL)<0)
-     {
-     // Error in gettimeofday... using old algorithm
-     diff=0;
-     }
-     else
-     {
-     fprintf(stderr,"%lu . %lu - ",now.tv_sec,now.tv_usec);
-     if (last.tv_sec==0) last=now;
-     diff=(now.tv_sec-last.tv_sec)*1000000 + (now.tv_usec-last.tv_usec);
-     last=now;
-     }
-     
-     fprintf(stderr,"diff: %d, waiting %lu\n",diff,(delay-diff>0)?delay-diff:0);
-     if (delay-diff>0)
-     usleep(delay-diff);
-     
-     return;
-     */
 	usleep((int)delay);
 }
 
@@ -240,13 +197,13 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs)
         
 		m_wait(DELAY);
         
-		//delete_foes();
+		delete_foes();
 		delete_fires();
         
 		move_fires();
-		//move_foes();
+		move_foes();
         
-		//blit_foes();
+		blit_foes();
 		blit_fires();
 		blit_score(74+x_ofs,y_ofs,score);
 		blit_borders(COL_RED);
@@ -289,14 +246,14 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
         
         m_wait(DELAY);
 
-        //delete_foes();
+        delete_foes();
         delete_fires();
 
         // move functions also performs collision check
         move_fires();
-        //move_foes();
+        move_foes();
 
-        //blit_foes();
+        blit_foes();
         blit_fires();
         blit_score(74+x_ofs,y_ofs,score);
         blit_borders(COL_GREEN);

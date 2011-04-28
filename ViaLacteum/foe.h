@@ -9,15 +9,10 @@
 #ifndef _FOE_H
 #define _FOE_H
 
-#define AT_NONE    -1
-#define AT_LAST    -2
-#define AT_LITTLE   0
-#define AT_BIG      1
-#define AT_BALL     2
-#define AT_SLIME    3
-#define AT_TINY     4
-#define AT_BIG_EXP  8
-#define AT_LIT_EXP  7
+#define AT_NONE     -1
+#define AT_LAST     -2
+#define AT_XP        0
+#define AT_GREY_FOE  1
 
 #define MAX_HEIGHT 5
 
@@ -38,7 +33,11 @@ typedef struct
 #define NUM_FOES 10
 
 // Foe movement
-void move_foe_straight(void *);
+void move_foe_straight_right(void *);
+
+// Foe movement
+void move_foe_straight_left(void *);
+
 
 // Initialize foes
 void init_foes();
