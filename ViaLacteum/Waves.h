@@ -13,6 +13,6 @@
 void init_waves();
 
 // Returns 0 if the game is over
-int create_zombies();
+int create_foes();
 
 #endif //_WAVES_H

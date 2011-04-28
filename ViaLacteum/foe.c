@@ -16,30 +16,30 @@ extern int y_ofs;
 extern int score;
 extern int game_ended;
 
-const bitmask bitmask_zombie   = {0xE0,0x40,0x00,0x00,0x00};
+const bitmask bitmask_foe   = {0xE0,0x40,0x00,0x00,0x00};
 
 foe all_foes[NUM_FOES];
 
 // Straight down, half speed if state is initialized at 0, top speed if -1
 void move_foe_straight(void *al_ptr)
 {
-	foe *zom;
-	zom = (foe*)al_ptr;
+	foe *fo;
+	fo = (foe*)al_ptr;
     
-	switch (zom->state)
+	switch (fo->state)
 	{
         case 0:
-            zom->state=1;
+            fo->state=1;
             break;
         case 1:
-            zom->y++;
-            zom->state=0;
+            fo->y++;
+            fo->state=0;
             break;
         case -1:
-            zom->y++;
+            fo->y++;
             break;
 	}
-	if ((zom->y)>23) zom->type=AT_NONE;
+	if ((fo->y)>23) fo->type=AT_NONE;
 }
 
 void init_foes()
@@ -81,7 +81,7 @@ void delete_foes()
 void move_foes()
 {
 	int i;
-	if (!create_zombies())
+	if (!create_foes())
 	{
 		game_ended = 1;
 	}

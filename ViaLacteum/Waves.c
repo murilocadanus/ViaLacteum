@@ -21,7 +21,7 @@ extern int score;
 
 extern foe all_foes[NUM_FOES];
 
-extern const bitmask bitmask_zombie;
+extern const bitmask bitmask_foe;
 
 /* Bytes (actual):
  1,2 - Moment of appearence
@@ -32,19 +32,6 @@ extern const bitmask bitmask_zombie;
  7 - state
  8 - movement function
  9 - alien necessary to appear (-1=none)
- 
- Next version could be:
- 1,2 - Moment of appearence
- 3   - array number
- 4   - type of alien
- 5   - min x
- 6   - max x
- 7   - min y
- 8   - max y
- 9   - possible state 1
- 10  - possible state 2
- 11  - movement function
- 12  - alien necessary to appear (-1=none)
  */
 
 #define FRAME_SIZE     9
@@ -77,7 +64,7 @@ void init_waves()
 {
 #ifndef RANDOM_WAVES
     // Sequential algorithm
-	wave=wave_1;
+	wave = wave_1;
 #else
     // Random algorithm
 	switch (rrand(1,4))
@@ -112,7 +99,7 @@ char *next_wave(const char *actual)
 	return next;
 }
 
-int create_zombies()
+int create_foes()
 {
 	static unsigned short int moment=0;
 	static int lev_count=0;
@@ -157,10 +144,10 @@ int create_zombies()
             switch (all_foes[ar_num].type)
             {
                 case AT_LITTLE:
-                    all_foes[ar_num].blit = blit_zombie;
-                    all_foes[ar_num].clear = clear_zombie;
+                    all_foes[ar_num].blit = blit_the_grey;
+                    all_foes[ar_num].clear = clear_the_grey;
                     for (n=0;n<MAX_HEIGHT;n++)
-                        all_foes[ar_num].collide[n] = bitmask_zombie[n];
+                        all_foes[ar_num].collide[n] = bitmask_foe[n];
                 break;
                 case AT_NONE:
                     ended = 1;

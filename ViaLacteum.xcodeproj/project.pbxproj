@@ -37,7 +37,7 @@
 		28A83C5D136794EF00C4084A /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
 		28A83C5E136794EF00C4084A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		E2C70FB11367269100B34ECB /* foe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = foe.c; sourceTree = "<group>"; };
-		E2C70FB21367269100B34ECB /* foe.h */ = {isa = PBXFileReference; fileEncoding = 4; path = foe.h; sourceTree = "<group>"; };
+		E2C70FB21367269100B34ECB /* foe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foe.h; sourceTree = "<group>"; };
 		E2C70FB71367503400B34ECB /* waves.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = waves.c; sourceTree = "<group>"; };
 		E2C70FB81367503400B34ECB /* waves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waves.h; sourceTree = "<group>"; };
 		E2C70FBA136753C100B34ECB /* fire.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fire.c; sourceTree = "<group>"; };

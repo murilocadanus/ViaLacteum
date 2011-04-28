@@ -85,34 +85,59 @@ void clear_explosion(int x, int y, int dim)
 }
 
 
-void blit_zombie(int x,int y)
+void blit_the_grey(int x,int y)
 {
 /*
- Little Zombie:
- 
- W_W
- "
- */
+ The greys:
+-----  
+\\ //  
+  _   
+/ # \  
+ / \  
+*/
 	if (is_y_range(y))
 	{
-		SET_COLOR(COL_BLUE);
-		mvwprintw(term,y,x,"W W");
-		SET_COLOR(COL_WHITE);
-		mvwaddch(term,y,x+1,(chtype)'_');
+		SET_COLOR(COL_GRAY);
+		mvwprintw(term,y,x,"-----");
 	}
 	if (is_y_range(y+1))
 	{
-		SET_COLOR(COL_RED);
-		mvwprintw(term,y+1,x+1,"\"");
+		SET_COLOR(COL_GRAY);
+		mvwprintw(term,y+1,x,"\\");
+   		SET_COLOR(COL_RED);
+        wprintw(term,"\\ ");
+   		SET_COLOR(COL_RED);
+        wprintw(term,"/");
+		SET_COLOR(COL_GRAY);
+        wprintw(term,"/");
 	}
+	if (is_y_range(y+2))
+	{
+		SET_COLOR(COL_GRAY);
+		mvwprintw(term,y,x+2,"-");
+	}
+	if (is_y_range(y+3))
+	{
+		SET_COLOR(COL_GRAY);
+		mvwprintw(term,y,x,"/ # \\");
+	}
+	if (is_y_range(y+4))
+	{
+		SET_COLOR(COL_GRAY);
+		mvwprintw(term,y,x+1," / \\");
+	}
+    
 	SET_COLOR(COL_BKG);
 }
 
-void clear_zombie(int x, int y)
+void clear_the_grey(int x, int y)
 {
 	SET_COLOR(COL_BKG);
-	if (is_y_range(y)) mvwprintw(term,y,x,"   ");
-	if (is_y_range(y+1)) mvwprintw(term,y+1,x+1," ");
+	if (is_y_range(y)) mvwprintw(term,y,x,       "     ");
+	if (is_y_range(y+1)) mvwprintw(term,y+1,x+1, "    ");
+	if (is_y_range(y+2)) mvwprintw(term,y+2,x+1, " ");
+	if (is_y_range(y+3)) mvwprintw(term,y+3,x+1, "     ");
+	if (is_y_range(y+4)) mvwprintw(term,y+4,x+1, "    ");
 }
 
 void blit_fire(int x,int y)
@@ -120,7 +145,7 @@ void blit_fire(int x,int y)
 	if (is_y_range(y))
 	{
 		SET_COLOR(COL_RED);
-		mvwaddch(term,y,x,(chtype)'!');
+		mvwaddch(term,y,x,(chtype)'-');
 		SET_COLOR(COL_BKG);
 	}
 }
@@ -134,145 +159,143 @@ void clear_fire(int x, int y)
 	}
 }
 
-/*void blit_player(int x,int y)
+void blit_player_right(int x,int y)
 {
- This is the player's ship:
- ABCDEFGHIJKLMNOP
- QRSTUVWXYZABCDEF
- GHIJKLMNOPQRSTUV
- WXYZABCDEFGHIJKL
- MNOPQRSTUVWXYZAB
- CDEFGHIJKLMNOPQR
- STUVWXYZABCDEFGH
- IJKLMNOPQRSTUVWX
- YZABCDEFGHIJKLMN
- OPQRSTUVWXYZABCD
- EFGHIJKLMNOPQRST
- UVWXYZABCDEFGHIJ
- KLMNOPQRSTUVWXYZ
- ABCDEFGHIJKLMNOP
- QRSTUVWXYZABCDEF
- GHIJKLMNOPQRSTUV
- WXYZABCDEFGHIJKL
- MNOPQRSTUVWXYZAB
- CDEFGHIJKLMNOPQR
- STUVWXYZABCDEFGH
- IJKLMNOPQRSTUVWX
- YZABCDEFGHIJKLMN
- OPQRSTUVWXYZABCD
- EFGHIJKLMNOPQRST
-
-	if (is_y_range(y))
-	{
-		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y,x+2,  "ABCD");
-	}
-	
-	if (is_y_range(y+1))
-	{
-		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y+1,x+1,"| ");
-		SET_COLOR(COL_DARKCYAN);
-		wprintw(term,"_");
-		SET_COLOR(COL_GRAY);
-		wprintw(term," |");
-	}
-    
-	if (is_y_range(y+2))
-	{
-		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y+2,x,"< ");
-		SET_COLOR(COL_DARKCYAN);
-		wprintw(term,"/_\\");
-		SET_COLOR(COL_GRAY);
-		wprintw(term," >");
-	}
-    
-	if (is_y_range(y+3))
-	{
-		SET_COLOR(COL_YELLOW);
-		mvwprintw(term,y+3,x+1,"^");
-		SET_COLOR(COL_RED);
-		wprintw(term,"^^^");
-		SET_COLOR(COL_YELLOW);
-		wprintw(term,"^");
-	}
-    
-	SET_COLOR(COL_BKG);
-}
-*/
-    
-void blit_player(int x,int y)
-{
-/* This is the player's ship:
-    @@
-    @#
-   @@#@--
-   @@ |
- #$  $#
-@#    @#
+/* This is the player in right position:
+   __
+   **
+  -||-
+ / || @-
+  /  \
+ /_   \_
 */
     
     if (is_y_range(y))
     {
         SET_COLOR(COL_DARKRED);
-        mvwprintw(term,y,x+4,  "@@");
+        mvwprintw(term,y,x+3,  "--");
     }
     
     if (is_y_range(y+1))
     {
         SET_COLOR(COL_DARKRED);
-        mvwprintw(term,y+1,x+4,"@#");
+        mvwprintw(term,y+1,x+3,"**");
     }
     
     if (is_y_range(y+2))
     {
         SET_COLOR(COL_GRAY);
-        mvwprintw(term,y+2,x+3,"@@");
+        mvwprintw(term,y+2,x+2,"-");
         SET_COLOR(COL_DARKCYAN);
-        wprintw(term,"#");
+        wprintw(term,"||");
         SET_COLOR(COL_GRAY);
-        wprintw(term,"@");
-        SET_COLOR(COL_RED);
-        wprintw(term,"--");
+        wprintw(term,"-");
     }
     
     if (is_y_range(y+3))
     {
         SET_COLOR(COL_YELLOW);
-        mvwprintw(term,y+3,x+3,"@@ ");
+        mvwprintw(term,y+3,x+1,"/ ||");
         SET_COLOR(COL_RED);
-        wprintw(term,"|");
+        wprintw(term," @-");
     }
     
     if (is_y_range(y+4))
     {
         SET_COLOR(COL_GRAY);
-        mvwprintw(term,y+4,x+1,"#$ ");
-        SET_COLOR(COL_DARKCYAN);
-        wprintw(term," $#");
+        mvwprintw(term,y+4,x+2,"/  \\");
     }
     
     if (is_y_range(y+5))
     {
         SET_COLOR(COL_GRAY);
-        mvwprintw(term,y+5,x,"@#  ");
+        mvwprintw(term,y+5,x+1,"/_ ");
         SET_COLOR(COL_DARKCYAN);
-        wprintw(term,"  #@");
+        wprintw(term,"  \\_");
     }
     SET_COLOR(COL_BKG);
 }
 
-void clear_player(int x,int y)
+void clear_player_right(int x,int y)
 {
 	SET_COLOR(COL_BKG);
-	if (is_y_range(y))    mvwprintw(term,y,x+4,    "  ");
-	if (is_y_range(y+1))  mvwprintw(term,y+1,x+4,  "  ");
-	if (is_y_range(y+2))  mvwprintw(term,y+2,x+3,  "      ");
-	if (is_y_range(y+3))  mvwprintw(term,y+3,x+3,  "    ");
-	if (is_y_range(y+4))  mvwprintw(term,y+4,x+1,  "      ");
-	if (is_y_range(y+5))  mvwprintw(term,y+5,x,  "        ");
+	if (is_y_range(y))    mvwprintw(term,y,x+3,   "  ");
+	if (is_y_range(y+1))  mvwprintw(term,y+1,x+3, "  ");
+	if (is_y_range(y+2))  mvwprintw(term,y+2,x+2, "      ");
+	if (is_y_range(y+3))  mvwprintw(term,y+3,x+1, "       ");
+	if (is_y_range(y+4))  mvwprintw(term,y+4,x+2, "    ");
+	if (is_y_range(y+5))  mvwprintw(term,y+5,x+1, "       ");
 }
+
+void blit_player_left(int x,int y)
+{
+/* This is the player in right position:
+   __
+   **
+  -||-
+-@ || \
+  /  \
+_/   _\
+*/
+    
+    if (is_y_range(y))
+    {
+        SET_COLOR(COL_DARKRED);
+        mvwprintw(term,y,x+3,  "--");
+    }
+    
+    if (is_y_range(y+1))
+    {
+        SET_COLOR(COL_DARKRED);
+        mvwprintw(term,y+1,x+3,"**");
+    }
+    
+    if (is_y_range(y+2))
+    {
+
+        SET_COLOR(COL_RED);
+        mvwprintw(term,y+2,x+2,"-");
+        SET_COLOR(COL_DARKCYAN);
+        wprintw(term,"||");
+        SET_COLOR(COL_GRAY);
+        wprintw(term,"-");
+    }
+    
+    if (is_y_range(y+3))
+    {
+        SET_COLOR(COL_RED);
+        mvwprintw(term,y+3,x,"-@");
+        SET_COLOR(COL_DARKCYAN);
+        wprintw(term," || \\");
+    }
+    
+    if (is_y_range(y+4))
+    {
+        SET_COLOR(COL_GRAY);
+        mvwprintw(term,y+4,x+2,"/  \\");
+    }
+    
+    if (is_y_range(y+5))
+    {
+        SET_COLOR(COL_GRAY);
+        mvwprintw(term,y+5,x,"_/ ");
+        SET_COLOR(COL_DARKCYAN);
+        wprintw(term,"  _\\");
+    }
+    SET_COLOR(COL_BKG);
+}
+
+void clear_player_left(int x,int y)
+{
+	SET_COLOR(COL_BKG);
+	if (is_y_range(y))    mvwprintw(term,y,x+3,   "  ");
+	if (is_y_range(y+1))  mvwprintw(term,y+1,x+3, "  ");
+	if (is_y_range(y+2))  mvwprintw(term,y+2,x+2, "    ");
+	if (is_y_range(y+3))  mvwprintw(term,y+3,x,   "       ");
+	if (is_y_range(y+4))  mvwprintw(term,y+4,x+2, "    ");
+	if (is_y_range(y+5))  mvwprintw(term,y+5,x,   "       ");
+}
+
 
 void blit_score(int x, int y, int score)
 {

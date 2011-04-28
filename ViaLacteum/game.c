@@ -11,6 +11,7 @@
 int score = 0;
 int end_x;
 int game_ended = 0;
+int side = 1; // player side
 
 const bitmask bitmask_player={0x38,0x7C,0xFE,0x7C,0x00};
 
@@ -52,10 +53,10 @@ int collide_player(int x)
 
 int move_player(WINDOW *term, int x_ofs, int y_ofs)
 {
-	int c = 0; /* character readen */
+	int c = 0; // character readen
 	static int last_c=-1;
-	static int x = 37; /* ship position */
-	static int xs = 0; /* ship speed */
+	static int x = 37; // player position
+	static int xs = 0; // player speed
     
 	if (game_ended)
 	{
@@ -75,16 +76,18 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
                     break;
                 case KEY_LEFT:
                     xs--;
+                    side = 0;
                     break;
                 case KEY_RIGHT:
                     xs++;
+                    side = 1;
                     break;
                 case KEY_DOWN:
                     xs=0;
                     break;
                 case ' ':
                 case KEY_ENTER_:
-                    new_fire(x+3,21);
+                    new_fire(x+3,21, side);
                     break;
                 case 's':
                 case KEY_BACKSPACE:
@@ -105,7 +108,8 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 		if (xs>MAXSPEED) xs=MAXSPEED;
 		if (xs<-MAXSPEED) xs=-MAXSPEED;
         
-		clear_player(x+x_ofs,18+y_ofs);
+        clear_player_right(x+x_ofs,18+y_ofs);
+        clear_player_left(x+x_ofs,18+y_ofs);            
         
 		x+=xs;
         
@@ -115,7 +119,10 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 			(x>0)?(x=73):(x=0);
 		}
         
-		blit_player(x+x_ofs,18+y_ofs);
+        if(side)
+            blit_player_right(x+x_ofs,18+y_ofs);
+        else
+            blit_player_left(x+x_ofs,18+y_ofs);
         
 		// Check for collision with zombies
 		if (collide_player(x))
@@ -128,7 +135,9 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 		switch (exploding++)
 		{
             case 1:
-                clear_player(x+x_ofs,21+y_ofs);
+                clear_player_right(x+x_ofs,21+y_ofs);
+                clear_player_left(x+x_ofs,21+y_ofs);
+                
                 blit_explosion(x+3+x_ofs,22+y_ofs,3);
                 break;
             case 2:
@@ -218,21 +227,26 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs)
 	int y;
 	for (y=21;y>-7;y--)
 	{
-		clear_player(end_x+x_ofs,y+y_ofs);
-		blit_player(end_x+x_ofs,y-1+y_ofs);
+        clear_player_right(end_x+x_ofs,y+y_ofs);
+        clear_player_left(end_x+x_ofs,y+y_ofs);
+
+        if(side)
+            blit_player_right(end_x+x_ofs,y-1+y_ofs);
+        else
+            blit_player_left(end_x+x_ofs,y-1+y_ofs);
         
 		wmove(term,0,0);
 		wrefresh(term);
         
 		m_wait(DELAY);
         
-		delete_foes();
+		//delete_foes();
 		delete_fires();
         
 		move_fires();
-		move_foes();
+		//move_foes();
         
-		blit_foes();
+		//blit_foes();
 		blit_fires();
 		blit_score(74+x_ofs,y_ofs,score);
 		blit_borders(COL_RED);
@@ -241,16 +255,7 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs)
 
 void final()
 {
-	printf("\n    Congratulations!\n");
-	printf("    You have defeated Xzarna, the Queen of the Zorxians!\n\n");
-    
-	printf("    With their queen gone all the zorxian space ships fled, desperately\n");
-	printf("    seeking to save themselves, and the earth attack failed.\n");
-	printf("    2 years later the zorxian race was completely defeated, and the\n");
-	printf("    human race completed its expansion in all the solar system.\n");
-	printf("    The starpilot who killed Xzarna was decorated, and his bravery is\n");
-	printf("    recorded in every history book.\n");
-	printf("\n                               *** THE END ***\n");
+	printf("\n    Parabens voce sobreviveu!\n");
 }
 
 int quit_game(WINDOW *term)
@@ -266,21 +271,21 @@ int quit_game(WINDOW *term)
 
 int game(WINDOW *term, int x_ofs, int y_ofs)
 {
-    init_foes();
-    init_waves();
+    //init_foes();
+    //init_waves();
 
     while (move_player(term, x_ofs, y_ofs))
     {
         m_wait(DELAY);
 
-        delete_foes();
+        //delete_foes();
         delete_fires();
 
         // move functions also performs collision check
         move_fires();
-        move_foes();
+        //move_foes();
 
-        blit_foes();
+        //blit_foes();
         blit_fires();
         blit_score(74+x_ofs,y_ofs,score);
         blit_borders(COL_GREEN);
