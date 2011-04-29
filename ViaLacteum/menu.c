@@ -1,5 +1,6 @@
 #include "menu.h"
 #include "game.h"
+#include <string.h>
 
 int menu(WINDOW *term, int x_ofs, int y_ofs)
 {	       

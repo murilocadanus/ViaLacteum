@@ -15,7 +15,8 @@ extern int x_ofs;
 extern int y_ofs;
 extern int term_x;
 extern int term_y;
-extern WINDOW *term; /* our terminal */
+
+extern WINDOW *term;
 
 #define SET_COLOR_DRAW(fore, bg)                wattrset(stdscr, COLOR_PAIR(COLOR_##fore * COLORS + COLOR_##bg))
 

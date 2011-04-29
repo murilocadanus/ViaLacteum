@@ -5,7 +5,6 @@
 //  Created by Murilo Costa on 26/04/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-
 #include "foe.h"
 #include "blit.h"
 #include "util.h"
@@ -175,9 +174,10 @@ int collide_foes(int x, int y)
 			int mask_x, mask_y;
 			mask_x = x-all_foes[i].x;
 			mask_y = y-all_foes[i].y;
+                                   
 			if ((mask_y>=0) && (mask_y<MAX_HEIGHT) && (mask_x>=0) && (mask_x<8))
 			{
-				if ( (all_foes[i].collide[mask_y] & (0x80 >> mask_x)) != 0 )
+				if ( (all_foes[i].collide[mask_y] & (0x80 >> mask_x)) == 0 )
 					return i;
 			}
 		}

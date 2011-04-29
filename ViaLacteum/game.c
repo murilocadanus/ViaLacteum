@@ -15,6 +15,8 @@ int side = 1; // player side
 
 const bitmask bitmask_player={0x38,0x7C,0xFE,0x7C,0x00};
 
+const WINDOW *term;
+
 // Player dying
 // This will be >0 if the player is dying */
 int exploding = 0; 
@@ -29,7 +31,9 @@ int collide_player(int x)
 			if ( (bitmask_player[check_y] & (0x80 >> check_x)) != 0 )
 			{
 				if (collide_foes(x+check_x,21+check_y)>=0)
+                {
 					return 1;
+                }
 			}
 		}
 	}
@@ -39,7 +43,7 @@ int collide_player(int x)
 int move_player(WINDOW *term, int x_ofs, int y_ofs)
 {
 	int c = 0; // character readen
-	static int last_c=-1;
+	static int last_c = -1;
 	static int x = 37; // player position
 	static int xs = 0; // player speed
     
@@ -109,7 +113,7 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
         else
             blit_player_left(x+x_ofs,18+y_ofs);
         
-		// Check for collision with zombies
+		// Check for collision with foes
 		if (collide_player(x))
 		{
 			exploding = 1;
@@ -271,7 +275,7 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
     
 	if (game_ended) final();
     
-	printf("\nYou have made %d points!\n", score);
+	printf("\nVoce fez %d pontos!\n", score);
 	printf("-= I-N-V-A-S-O-R-E-S =-\n");
     return 0;
 }
