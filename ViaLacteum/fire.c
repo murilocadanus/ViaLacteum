@@ -10,10 +10,6 @@
 #include "blit.h"
 #include "foe.h"
 
-#include "defs.h"
-#include <curses.h>
-extern WINDOW *term;
-
 extern int x_ofs;
 extern int y_ofs;
 extern foe all_foes[NUM_FOES];
@@ -74,15 +70,13 @@ void move_fires()
 		if (all_fires[i].y >= 0)
 		{
 			int n;
-                      
+            
+            // Verify the of player to move shot
             if(all_fires[i].side)
                 all_fires[i].x++;
             else
                 all_fires[i].x--;
-            
-            SET_COLOR(COL_GRAY);
-            mvwprintw(term, 24, 0, "%X fire", all_fires[i].x);
-                        
+                                   
 			if (all_fires[i].x<0 || all_fires[i].x>80)
 			{
 				all_fires[i].y = -1;

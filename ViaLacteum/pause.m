@@ -2,6 +2,7 @@
 #include "game.h"
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
+#include <string.h>
 
 int pause_game(WINDOW *term, int x_ofs, int y_ofs)
 {	       

@@ -26,21 +26,6 @@ NSSound *shoot;
 
 int collide_player(int x)
 {
-	/* This collision algorithm is probably faster but must be completed */
-    /*	int i;
-     int rel_x,rel_y;
-     for (i=0;i<NUMALIENS;i++)
-     {
-     if (all_aliens[i].type!=AT_NONE)
-     {
-     rel_x=x-all_aliens[i].x;
-     rel_y=21-all_aliens[i].y;
-     // ...... 
-     }
-     }
-     return 0; */
-    
-	/* For now I will use this... it can be good anyway */
 	int check_x,check_y;
 	for (check_y=0; check_y<MAX_HEIGHT; check_y++)
 	{
@@ -59,7 +44,7 @@ int collide_player(int x)
 int move_player(WINDOW *term, int x_ofs, int y_ofs)
 {
 	int c = 0; // character readen
-	static int last_c=-1;
+	static int last_c = -1;
 	static int x = 37; // player position
 	static int xs = 0; // player speed
     
@@ -103,7 +88,7 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 		}
 		last_c = c;
         
-		/* Check limits */
+		// Check limits
 		if (xs>MAXSPEED) xs=MAXSPEED;
 		if (xs<-MAXSPEED) xs=-MAXSPEED;
         
@@ -112,10 +97,10 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
         
 		x+=xs;
         
-		if ( (x<0) || (x>73) )
+		if ( (x<0) || (x>72) )
 		{
 			xs = 0;
-			(x>0)?(x=73):(x=0);
+			(x>0)?(x=72):(x=0);
 		}
         
         if(side)
@@ -123,7 +108,7 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
         else
             blit_player_left(x+x_ofs,18+y_ofs);
         
-		// Check for collision with zombies
+		// Check for collision with foes
 		if (collide_player(x))
 		{
 			exploding = 1;
@@ -261,13 +246,13 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs)
         
 		m_wait(DELAY);
         
-		//delete_foes();
+		delete_foes();
 		delete_fires();
         
 		move_fires();
-		//move_foes();
+		move_foes();
         
-		//blit_foes();
+		blit_foes();
 		blit_fires();
 		blit_score(74+x_ofs,y_ofs,score);
 		blit_borders(COL_RED);
@@ -416,14 +401,14 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
         
         m_wait(DELAY);
 
-        //delete_foes();
+        delete_foes();
         delete_fires();
 
         // move functions also performs collision check
         move_fires();
-        //move_foes();
+        move_foes();
 
-        //blit_foes();
+        blit_foes();
         blit_fires();
         blit_score(74+x_ofs,y_ofs,score);
         blit_borders(COL_GREEN);
@@ -450,7 +435,6 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
 		end_game(term, x_ofs, y_ofs);
 	}
     
-        
 	// Flush input
 	while (wgetch(term) != ERR);
     

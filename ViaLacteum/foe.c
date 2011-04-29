@@ -5,7 +5,6 @@
 //  Created by Murilo Costa on 26/04/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-
 #include "foe.h"
 #include "blit.h"
 #include "util.h"
@@ -20,8 +19,8 @@ const bitmask bitmask_foe   = {0xE0,0x40,0x00,0x00,0x00};
 
 foe all_foes[NUM_FOES];
 
-// Straight down, half speed if state is initialized at 0, top speed if -1
-void move_foe_straight(void *al_ptr)
+// Straight right
+void move_foe_straight_right(void *al_ptr)
 {
 	foe *fo;
 	fo = (foe*)al_ptr;
@@ -32,15 +31,38 @@ void move_foe_straight(void *al_ptr)
             fo->state=1;
             break;
         case 1:
-            fo->y++;
+            fo->x++;
             fo->state=0;
             break;
         case -1:
-            fo->y++;
+            fo->x++;
             break;
 	}
-	if ((fo->y)>23) fo->type=AT_NONE;
+	if ((fo->x)>80) fo->type=AT_NONE;
 }
+
+// Straight left
+void move_foe_straight_left(void *al_ptr)
+{
+	foe *fo;
+	fo = (foe*)al_ptr;
+    
+	switch (fo->state)
+	{
+        case 0:
+            fo->state=1;
+            break;
+        case 1:
+            fo->x--;
+            fo->state=0;
+            break;
+        case -1:
+            fo->x--;
+            break;
+	}
+	if ((fo->x)<0) fo->type=AT_NONE;
+}
+
 
 void init_foes()
 {
@@ -62,7 +84,6 @@ void blit_foes()
 	}
 }
 
-
 // Delete all foes
 void delete_foes()
 {
@@ -76,7 +97,6 @@ void delete_foes()
 	}
 }
 
-
 // Makes all foes move
 void move_foes()
 {
@@ -89,40 +109,10 @@ void move_foes()
 	{
 		switch (all_foes[i].type)
 		{
-            case AT_BIG:
-            case AT_TINY:
-            case AT_BALL:
-            case AT_SLIME:
-            case AT_LITTLE:
+            case AT_GREY_FOE:
                 all_foes[i].move((void*)&all_foes[i]);
                 break;
-            case AT_BIG_EXP:
-                switch (all_foes[i].state++)
-			{
-                case 0:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
-                    break;
-                case 2:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
-                    break;
-                case 4:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
-                    break;
-                case 6:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
-                    break;
-                case 8:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
-                    all_foes[i].type = AT_LAST;
-                    break;
-			}
-                break;
-            case AT_LIT_EXP:
+            case AT_XP:
                 switch (all_foes[i].state++)
 			{
                 case 0:
@@ -161,9 +151,9 @@ void blow_foe(int num)
     
 	switch (all_foes[num].type)
 	{
-        case AT_BALL:
+        case AT_GREY_FOE:
             score+=200;
-            all_foes[num].type  = AT_LIT_EXP;
+            all_foes[num].type  = AT_XP;
             all_foes[num].blit  = blit_explosion_1;
             all_foes[num].clear = clear_explosion_1;
             all_foes[num].state = 0;
@@ -184,9 +174,10 @@ int collide_foes(int x, int y)
 			int mask_x, mask_y;
 			mask_x = x-all_foes[i].x;
 			mask_y = y-all_foes[i].y;
+                                   
 			if ((mask_y>=0) && (mask_y<MAX_HEIGHT) && (mask_x>=0) && (mask_x<8))
 			{
-				if ( (all_foes[i].collide[mask_y] & (0x80 >> mask_x)) != 0 )
+				if ( (all_foes[i].collide[mask_y] & (0x80 >> mask_x)) == 0 )
 					return i;
 			}
 		}
