@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28274E2B1369E41300F1784B /* pause.c in Sources */ = {isa = PBXBuildFile; fileRef = 28274E291369E41300F1784B /* pause.c */; };
+		28274E2B1369E41300F1784B /* pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 28274E291369E41300F1784B /* pause.m */; };
 		28274E2F136A19F600F1784B /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28274E2E136A19F600F1784B /* AudioPlayer.m */; };
 		28274E33136A1B1C00F1784B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28274E32136A1B1C00F1784B /* Foundation.framework */; };
 		28274E35136A1B2600F1784B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28274E34136A1B2600F1784B /* AppKit.framework */; };
 		28274E39136A1D5300F1784B /* Invasores.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28274E38136A1D2600F1784B /* Invasores.wav */; };
 		288E7241136B1DE7001CE835 /* Gameplay.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7240136B1DD0001CE835 /* Gameplay.wav */; };
-		28A83C5B1367910D00C4084A /* menu.c in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5A1367910C00C4084A /* menu.c */; };
+		288E7246136B22AE001CE835 /* Select.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7243136B22A5001CE835 /* Select.wav */; };
+		288E7247136B22AE001CE835 /* Change.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7244136B22A5001CE835 /* Change.wav */; };
+		288E7249136B2C1F001CE835 /* Shoot.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7248136B2C1A001CE835 /* Shoot.wav */; };
+		28A83C5B1367910D00C4084A /* menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5A1367910C00C4084A /* menu.m */; };
 		28A83C5F136794EF00C4084A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5D136794EF00C4084A /* game.m */; };
 		E2C70FB31367269100B34ECB /* foe.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB11367269100B34ECB /* foe.c */; };
 		E2C70FB91367503400B34ECB /* waves.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB71367503400B34ECB /* waves.c */; };
@@ -32,6 +35,9 @@
 			dstPath = resources;
 			dstSubfolderSpec = 16;
 			files = (
+				288E7249136B2C1F001CE835 /* Shoot.wav in CopyFiles */,
+				288E7246136B22AE001CE835 /* Select.wav in CopyFiles */,
+				288E7247136B22AE001CE835 /* Change.wav in CopyFiles */,
 				288E7241136B1DE7001CE835 /* Gameplay.wav in CopyFiles */,
 				28274E39136A1D5300F1784B /* Invasores.wav in CopyFiles */,
 			);
@@ -40,7 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		28274E291369E41300F1784B /* pause.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pause.c; sourceTree = "<group>"; };
+		28274E291369E41300F1784B /* pause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pause.m; sourceTree = "<group>"; };
 		28274E2A1369E41300F1784B /* pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pause.h; sourceTree = "<group>"; };
 		28274E2D136A19F600F1784B /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
 		28274E2E136A19F600F1784B /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
@@ -48,7 +54,10 @@
 		28274E34136A1B2600F1784B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		28274E38136A1D2600F1784B /* Invasores.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Invasores.wav; sourceTree = "<group>"; };
 		288E7240136B1DD0001CE835 /* Gameplay.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Gameplay.wav; sourceTree = "<group>"; };
-		28A83C5A1367910C00C4084A /* menu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = menu.c; sourceTree = "<group>"; };
+		288E7243136B22A5001CE835 /* Select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Select.wav; sourceTree = "<group>"; };
+		288E7244136B22A5001CE835 /* Change.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Change.wav; sourceTree = "<group>"; };
+		288E7248136B2C1A001CE835 /* Shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Shoot.wav; sourceTree = "<group>"; };
+		28A83C5A1367910C00C4084A /* menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menu.m; sourceTree = "<group>"; };
 		28A83C5C1367913C00C4084A /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
 		28A83C5D136794EF00C4084A /* game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = game.m; sourceTree = "<group>"; };
 		28A83C5E136794EF00C4084A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
@@ -87,6 +96,9 @@
 		28274E37136A1D2600F1784B /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				288E7248136B2C1A001CE835 /* Shoot.wav */,
+				288E7243136B22A5001CE835 /* Select.wav */,
+				288E7244136B22A5001CE835 /* Change.wav */,
 				288E7240136B1DD0001CE835 /* Gameplay.wav */,
 				28274E38136A1D2600F1784B /* Invasores.wav */,
 			);
@@ -129,11 +141,11 @@
 				E2C70FB21367269100B34ECB /* foe.h */,
 				E2C70FBA136753C100B34ECB /* fire.c */,
 				E2C70FBB136753C100B34ECB /* fire.h */,
-				28A83C5A1367910C00C4084A /* menu.c */,
+				28A83C5A1367910C00C4084A /* menu.m */,
 				28A83C5C1367913C00C4084A /* menu.h */,
 				28A83C5D136794EF00C4084A /* game.m */,
 				28A83C5E136794EF00C4084A /* game.h */,
-				28274E291369E41300F1784B /* pause.c */,
+				28274E291369E41300F1784B /* pause.m */,
 				28274E2A1369E41300F1784B /* pause.h */,
 				28274E2D136A19F600F1784B /* AudioPlayer.h */,
 				28274E2E136A19F600F1784B /* AudioPlayer.m */,
@@ -194,9 +206,9 @@
 				E2C70FB31367269100B34ECB /* foe.c in Sources */,
 				E2C70FB91367503400B34ECB /* waves.c in Sources */,
 				E2C70FBC136753C100B34ECB /* fire.c in Sources */,
-				28A83C5B1367910D00C4084A /* menu.c in Sources */,
+				28A83C5B1367910D00C4084A /* menu.m in Sources */,
 				28A83C5F136794EF00C4084A /* game.m in Sources */,
-				28274E2B1369E41300F1784B /* pause.c in Sources */,
+				28274E2B1369E41300F1784B /* pause.m in Sources */,
 				28274E2F136A19F600F1784B /* AudioPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,3 +28,5 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs);
 int show_dialogs();
 void load_game_music();
 void unload_game_music();
+void play_game_music();
+void pause_game_music();

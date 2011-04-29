@@ -22,6 +22,7 @@ const bitmask bitmask_player={0x38,0x7C,0xFE,0x7C,0x00};
 // This will be >0 if the player is dying */
 int exploding = 0; 
 NSSound *gameMusic;
+NSSound *shoot;
 
 int collide_player(int x)
 {
@@ -91,6 +92,9 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
                     break;
                 case ' ':
                 case KEY_ENTER_:
+                    shoot = [[NSSound alloc] initWithContentsOfFile:@"resources/Shoot.wav" byReference:YES];
+                    [shoot setCurrentTime:0.0];
+                    [shoot play];
                     new_fire(x+3,21, side);
                     break;
                 case KEY_ESC:
@@ -183,13 +187,17 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
     
     if (c == 'P')
     {
+        pause_game_music();
+        
         int pause_menu = pause_game(term, x_ofs, y_ofs);
         if (pause_menu == CONTINUAR_JOGO)
         {
+            play_game_music();
             c = 'A';
         }
         else if (pause_menu == MENU_PRINCIPAL)
         {
+            unload_game_music();
             c = 'V';
         }                
         else if (pause_menu == SAIR)
@@ -371,12 +379,23 @@ int show_dialogs()
 void load_game_music()
 {
     gameMusic = [[NSSound alloc] initWithContentsOfFile:@"resources/Gameplay.wav" byReference:YES];
+    [gameMusic setCurrentTime:0.0];
     [gameMusic play];
 }
 
 void unload_game_music()
 {
     [gameMusic stop];
+}
+
+void pause_game_music()
+{
+    [gameMusic pause];
+}
+
+void play_game_music()
+{
+    [gameMusic play];
 }
 
 int game(WINDOW *term, int x_ofs, int y_ofs)

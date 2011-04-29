@@ -143,7 +143,7 @@ void clear_the_grey(int x, int y)
 }
 
 void blit_fire(int x,int y)
-{
+{    
 	if (is_y_range(y))
 	{
 		SET_COLOR(COL_RED);

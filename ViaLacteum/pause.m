@@ -1,5 +1,7 @@
 #include "pause.h"
 #include "game.h"
+#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
 
 int pause_game(WINDOW *term, int x_ofs, int y_ofs)
 {	       
@@ -51,6 +53,10 @@ int pause_game(WINDOW *term, int x_ofs, int y_ofs)
 	mvwaddch(my_menu_win, 2, 39, ACS_RTEE);
 	refresh();
     
+    // Open the sounds
+    NSSound *change = [[NSSound alloc] initWithContentsOfFile:@"resources/Change.wav" byReference:YES];
+    NSSound *select = [[NSSound alloc] initWithContentsOfFile:@"resources/Select.wav" byReference:YES];
+    
 	// Post the menu
 	post_menu(my_menu);
 	wrefresh(my_menu_win);
@@ -62,12 +68,18 @@ int pause_game(WINDOW *term, int x_ofs, int y_ofs)
         switch(c)
         {	
             case KEY_DOWN:
+                [change setCurrentTime:0.0];
+                [change play];
 				menu_driver(my_menu, REQ_DOWN_ITEM);
                 break;
 			case KEY_UP:
+                [change setCurrentTime:0.0];
+                [change play];
 				menu_driver(my_menu, REQ_UP_ITEM);         
                 break;
 			case ENTER_KEY: // Enter
+                [select setCurrentTime:0.0];
+                [select play];
                 
                 if (strcmp(item_name(current_item(my_menu)), "Continuar Jogo") == 0)
                 {
