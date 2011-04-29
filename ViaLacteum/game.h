@@ -24,4 +24,7 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs);
 int game(WINDOW *term, int x_ofs, int y_ofs);
 void final();
 int quit_game();
+void game_over(WINDOW *term, int x_ofs, int y_ofs);
 int show_dialogs();
+void load_game_music();
+void unload_game_music();

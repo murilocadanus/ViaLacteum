@@ -54,6 +54,8 @@
 #define OPCOES 2
 #define CREDITOS 3
 #define SAIR 4
+#define CONTINUAR_JOGO 5
+#define MENU_PRINCIPAL 6
 
 
 #endif //_DEFS_H
