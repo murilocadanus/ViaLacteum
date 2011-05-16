@@ -36,12 +36,12 @@ extern const bitmask bitmask_foe;
 #define MOVE_STRAIGHT_LEFT  2
 
 char wave_1[] = {
-    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1/*,
+    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
     0x00,0x08, 1, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
     0x00,0x0C, 2, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
     0x00,0x14, 3, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
     0x00,0x18, 4, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
-    0x00,0x1C, 5, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1*/
+    0x00,0x1C, 5, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1
 };
 
 char wave_2[] = {

@@ -62,7 +62,7 @@ void move_foe_straight_left(void *al_ptr)
             break;
 	}
     
-	if ((fo->x)<50) fo->type=AT_NONE;
+	if ((fo->x)<0) fo->type=AT_NONE;
 }
 
 

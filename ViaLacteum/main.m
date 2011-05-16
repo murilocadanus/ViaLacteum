@@ -222,7 +222,7 @@ int main()
 	if (!right_size())
 	{
 		endwin();
-		fprintf(stderr,"Vialacteum must be run in an 80x25 terminal!\n");
+		fprintf(stderr,"Invasores roda em uma janela terminal com 80x25!\n");
 		return -1;
 	}
     
