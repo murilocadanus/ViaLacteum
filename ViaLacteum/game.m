@@ -383,6 +383,11 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
     
     for (int i=0; i<20; i++)
     {
+        if (wgetch(term) != ERR)
+        {
+            break;
+        }
+        
         iteraction++;
         SET_COLOR(COL_GREEN);
         

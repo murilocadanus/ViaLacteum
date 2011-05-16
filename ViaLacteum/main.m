@@ -198,7 +198,6 @@ void load_menu()
         if (option_menu == CREDITOS)
         {
             show_credits();
-            load_menu();
         }
     }
 }
