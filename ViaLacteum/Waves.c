@@ -117,9 +117,7 @@ int create_foes()
                 
                 switch (all_foes[ar_num].type)
                 {
-                    case AT_GREY_FOE:
-                        printf("AT GREY");
-                        
+                    case AT_GREY_FOE:                        
                         all_foes[ar_num].blit = blit_the_grey;
                         all_foes[ar_num].clear = clear_the_grey;
 
@@ -128,7 +126,6 @@ int create_foes()
                     break;
 
                     case AT_NONE:
-                        printf("AT NONE");
                         ended = 1;
                     break;
                 }

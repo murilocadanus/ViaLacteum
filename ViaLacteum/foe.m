@@ -10,6 +10,8 @@
 #include "util.h"
 #include "waves.h"
 #include <stdio.h>
+#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
 
 extern int x_ofs;
 extern int y_ofs;
@@ -19,6 +21,8 @@ extern int game_ended;
 const bitmask bitmask_foe   = {0xE0,0x40,0x00,0x00,0x00};
 
 foe all_foes[NUM_FOES];
+
+NSSound *zap;
 
 // Straight right
 void move_foe_straight_right(void *al_ptr)
@@ -67,8 +71,13 @@ void move_foe_straight_left(void *al_ptr)
 
 
 void init_foes()
-{
-	int i;
+{    
+    // Init sound when a foe is hit
+    zap = [[NSSound alloc] initWithContentsOfFile:@"resources/Blip.wav" byReference:YES];
+    [zap setCurrentTime:0.0];
+
+   	int i;
+    
 	for (i=0;i<NUM_FOES;i++)
 		all_foes[i].type=AT_NONE;
 }
@@ -163,6 +172,7 @@ void blow_foe(int num)
             all_foes[num].state = 0;
             all_foes[num].x++;
             all_foes[num].y++;
+            [zap play];
             break;
 	}
 }
