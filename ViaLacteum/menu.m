@@ -33,24 +33,23 @@ int menu(WINDOW *term, int x_ofs, int y_ofs)
 	init_pair(1, COLOR_RED, COLOR_BLACK);
     
 	/* Create items */
-    n_choices = 5;
+    n_choices = 4;
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));    
     my_items[0] = new_item((char *)"Novo Jogo", (char *)"");
-    my_items[1] = new_item((char *)"Opcoes ", (char *)"");
-    my_items[2] = new_item((char *)"Creditos", (char *)"");
-    my_items[3] = new_item((char *)"Sair", (char *)"");
-    my_items[4] = new_item((char *)NULL, (char *)"");
+    my_items[1] = new_item((char *)"Creditos", (char *)"");
+    my_items[2] = new_item((char *)"Sair", (char *)"");
+    my_items[3] = new_item((char *)NULL, (char *)"");
     
 	// Crate menu
 	my_menu = new_menu((ITEM **)my_items);
     
 	// Create the window to be associated with the menu
-    my_menu_win = newwin(9, 40, 12, 20);
+    my_menu_win = newwin(8, 40, 12, 20);
     keypad(my_menu_win, TRUE);
     
 	// Set main window and sub window
     set_menu_win(my_menu, my_menu_win);
-    set_menu_sub(my_menu, derwin(my_menu_win, 6, 38, 3, 1));
+    set_menu_sub(my_menu, derwin(my_menu_win, 5, 38, 3, 1));
     
 	// Set menu mark to the string " * "
     set_menu_mark(my_menu, " -> ");
@@ -61,7 +60,7 @@ int menu(WINDOW *term, int x_ofs, int y_ofs)
 	mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
 	mvwhline(my_menu_win, 2, 1, ACS_HLINE, 38);
 	mvwaddch(my_menu_win, 2, 39, ACS_RTEE);
-    mvprintw(LINES - 3, 4, "Pressione <ENTER> para escolher a opcao desejada");
+    mvprintw(LINES - 3, 4, "Pressione <ENTER> para escolher a opção desejada");
 	mvprintw(LINES - 2, 4, "Use as setas para navegar");
 	refresh();
     
@@ -95,6 +94,10 @@ int menu(WINDOW *term, int x_ofs, int y_ofs)
                 if (strcmp(item_name(current_item(my_menu)), "Novo Jogo") == 0)
                 {
                     option_selected = NOVO_JOGO;
+                }
+                else if (strcmp(item_name(current_item(my_menu)), "Creditos") == 0)
+                {
+                    option_selected = CREDITOS;
                 }
                 else if (strcmp(item_name(current_item(my_menu)), "Sair") == 0)
                 {

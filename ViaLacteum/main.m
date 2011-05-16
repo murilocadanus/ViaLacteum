@@ -59,60 +59,111 @@ void init_screen()
 void presentation()
 {       
     blit_borders(COL_BLUE);
+    int iteraction = 0;
+    int animation = 20;
     
-    SET_COLOR(COL_GREEN);
-    mvwprintw(term,8+y_ofs,25+x_ofs,"-- -= I-N-V-A-S-O-R-E-S =- --");
-    mvwprintw(term,11+y_ofs,27+x_ofs,  "");
+    while (wgetch(term) == ERR)
+    {
+        iteraction++;
+        SET_COLOR(COL_GREEN);
+        
+
+        mvwprintw(term,7+y_ofs - animation,25+x_ofs, "                                                ");
+        mvwprintw(term,8+y_ofs - animation,25+x_ofs, "  _____                                         ");
+        mvwprintw(term,9+y_ofs - animation,25+x_ofs, " |_   _|                                        ");
+        mvwprintw(term,10+y_ofs - animation,25+x_ofs,"   | |  _ ____   ____ _ ___  ___  _ __ ___ ___  ");
+        mvwprintw(term,11+y_ofs - animation,25+x_ofs,"   | | | '_ \\ \\ / / _` / __|/ _ \\| '__/ _ | __| ");
+        mvwprintw(term,12+y_ofs - animation,25+x_ofs,"  _| |_| | | \\ V / (_| \\__ \\ (_) | | |  __|__ \\ ");
+        mvwprintw(term,13+y_ofs - animation,25+x_ofs," |_____|_| |_|\\_/ \\__,_|___/\\___/|_|  \\___|___/ ");
+                          
+        mvwprintw(term,15+y_ofs,27+x_ofs,  "");
+
+        SET_COLOR(COL_WHITE);
+        
+        mvwprintw(term, LINES - 22 + animation, 1,  "         #iiiii# ");
+        mvwprintw(term, LINES - 21 + animation, 1,  "       #iEKWWWKEi# ");
+        mvwprintw(term, LINES - 20 + animation, 1,  "      iEKKKW#WKKKEi ");
+        mvwprintw(term, LINES - 19 + animation, 1,  "     #EWWKKW#WKKWWE# ");
+        mvwprintw(term, LINES - 18 + animation, 1,  "    #EWKEKWKKKWKEKWE# ");
+        mvwprintw(term, LINES - 17 + animation, 1,  "    #EW EWKWWWKWE WE# ");
+        mvwprintw(term, LINES - 16 + animation, 1,  "    #EK  EEKKKEE  KE# ");
+        mvwprintw(term, LINES - 15 + animation, 1,  "    #EK   EEKEE   KE# ");
+        mvwprintw(term, LINES - 14 + animation, 1,  "    #EK    WWW    KE# ");
+        mvwprintw(term, LINES - 13 + animation, 1,  "     iK    EWE    Ki ");
+        mvwprintw(term, LINES - 12 + animation, 1,  "     #EK   EWE   KE# ");
+        mvwprintw(term, LINES - 11 + animation, 1,  "     #EWEE E#E EEWE# ");
+        mvwprintw(term, LINES - 10 + animation, 1,  "      #KW#KKKKK#WK# ");
+        mvwprintw(term, LINES - 9 + animation, 1,   "       iWWWKEKWWWi ");
+        mvwprintw(term, LINES - 8 + animation, 1,   "        #KWKEKWK# ");
+        mvwprintw(term, LINES - 7 + animation, 1,   "         #K---K# ");
+        mvwprintw(term, LINES - 6 + animation, 1,   "          #KWK# ");
+        mvwprintw(term, LINES - 5 + animation, 1,   "           #i# ");
+        
+        SET_COLOR(COL_RED);
+        if (iteraction % 2)
+            mvwprintw(term,22+y_ofs,28+x_ofs,    "Precione qualquer tecla");
+        else
+            mvwprintw(term,22+y_ofs,28+x_ofs,    "                       ");
+        SET_COLOR(COL_BKG);
     
-    //init_color_pairs();
-    SET_COLOR(COL_WHITE);
-    mvwprintw(term, LINES - 22, 1 ,  "         #iiiii#     ");
-    mvwprintw(term, LINES - 21, 1 ,  "       #iEKWWWKEi#       ");
-    mvwprintw(term, LINES - 20, 1 ,  "      iEKKKW#WKKKEi      ");
-    mvwprintw(term, LINES - 19, 1 ,  "     #EWWKKW#WKKWWE#     ");
-    mvwprintw(term, LINES - 18, 1 ,  "    #EWKEKWKKKWKEKWE#    ");
-    mvwprintw(term, LINES - 17, 1 ,  "    #EW EWKWWWKWE WE#    ");
-    mvwprintw(term, LINES - 16, 1 ,  "    #EK  EEKKKEE  KE#    ");
-    mvwprintw(term, LINES - 15, 1 ,  "    #EK   EEKEE   KE#    ");
-    mvwprintw(term, LINES - 14, 1 ,  "    #EK    WWW    KE#    ");
-    mvwprintw(term, LINES - 13, 1 ,  "     iK    EWE    Ki     ");
-    mvwprintw(term, LINES - 12, 1 ,  "     #EK   EWE   KE#     ");
-    mvwprintw(term, LINES - 11, 1 ,  "     #EWEE E#E EEWE#     ");
-    mvwprintw(term, LINES - 10, 1 ,  "      #KW#KKKKK#WK#      ");
-    mvwprintw(term, LINES - 9, 1 ,   "       iWWWKEKWWWi       ");
-    mvwprintw(term, LINES - 8, 1 ,   "        #KWKEKWK#        ");
-    mvwprintw(term, LINES - 7, 1 ,   "         #KWWWK#         ");
-    mvwprintw(term, LINES - 6, 1 ,   "          #KWK#          ");
-    mvwprintw(term, LINES - 5, 1 ,   "           #i#           ");
-    
-    SET_COLOR(COL_WHITE);
-    mvwprintw(term, LINES - 22, 54 ,  "         #iiiii#     ");     
-    mvwprintw(term, LINES - 21, 54 ,  "       #iEKWWWKEi#       ");
-    mvwprintw(term, LINES - 20, 54 ,  "      iEKKKW#WKKKEi      ");
-    mvwprintw(term, LINES - 19, 54 ,  "     #EWWKKW#WKKWWE#     ");
-    mvwprintw(term, LINES - 18, 54 ,  "    #EWKEKWKKKWKEKWE#    ");
-    mvwprintw(term, LINES - 17, 54 ,  "    #EW EWKWWWKWE WE#    ");
-    mvwprintw(term, LINES - 16, 54 ,  "    #EK  EEKKKEE  KE#    ");
-    mvwprintw(term, LINES - 15, 54 ,  "    #EK   EEKEE   KE#    ");
-    mvwprintw(term, LINES - 14, 54 ,  "    #EK    WWW    KE#    ");
-    mvwprintw(term, LINES - 13, 54 ,  "     iK    EWE    Ki     ");
-    mvwprintw(term, LINES - 12, 54 ,  "     #EK   EWE   KE#     ");
-    mvwprintw(term, LINES - 11, 54 ,  "     #EWEE E#E EEWE#     ");
-    mvwprintw(term, LINES - 10, 54 ,  "      #KW#KKKKK#WK#      ");
-    mvwprintw(term, LINES - 9, 54 ,   "       iWWWKEKWWWi       ");
-    mvwprintw(term, LINES - 8, 54 ,   "        #KWKEKWK#        ");
-    mvwprintw(term, LINES - 7, 54 ,   "         #KWWWK#         ");
-    mvwprintw(term, LINES - 6, 54 ,   "          #KWK#          ");
-    mvwprintw(term, LINES - 5, 54 ,   "           #i#           ");
-    
-    SET_COLOR(COL_RED);
-    mvwprintw(term,22+y_ofs,28+x_ofs,    "Precione qualquer tecla");
-    SET_COLOR(COL_BKG);
-    
-    while (wgetch(term) == ERR);
+        wmove(term,0,0);
+		wrefresh(term);
+        refresh();
+        
+        m_wait(DELAY + 400000);
+
+        if (animation > 1)
+            animation--;
+    }
     
     wclear(term);
     
+}
+
+void show_credits()
+{        
+    blit_borders(COL_BLUE);
+    int iteraction = 0;
+    int animation = 20;
+    
+    while (wgetch(term) == ERR)
+    {
+        iteraction++;
+        SET_COLOR(COL_GREEN);
+        
+        
+        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                                ");
+        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "  _____                                         ");
+        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, " |_   _|                                        ");
+        mvwprintw(term, LINES - 20 + animation, 18+x_ofs,"   | |  _ ____   ____ _ ___  ___  _ __ ___ ___  ");
+        mvwprintw(term, LINES - 19 + animation, 18+x_ofs,"   | | | '_ \\ \\ / / _` / __|/ _ \\| '__/ _ | __| ");
+        mvwprintw(term, LINES - 18 + animation, 18+x_ofs,"  _| |_| | | \\ V / (_| \\__ \\ (_) | | |  __|__ \\ ");
+        mvwprintw(term, LINES - 17 + animation, 18+x_ofs," |_____|_| |_|\\_/ \\__,_|___/\\___/|_|  \\___|___/ ");
+        
+        mvwprintw(term, LINES - 16 + animation, 18+x_ofs,  "                                                ");
+        mvwprintw(term, LINES - 15 + animation, 18+x_ofs,  "                                                ");
+        mvwprintw(term, LINES - 14 + animation, 18+x_ofs,  "                                                ");        
+        
+        SET_COLOR(COL_WHITE);
+        
+        mvwprintw(term, LINES - 13 + animation, 28+x_ofs,  "     Desenvolvido por:   ");
+        mvwprintw(term, LINES - 12 + animation, 28+x_ofs,  "                         ");        
+        mvwprintw(term, LINES - 11 + animation, 28+x_ofs,  " Marlus Cadanus da Costa ");
+        mvwprintw(term, LINES - 10 + animation, 28+x_ofs,  "            e            ");
+        mvwprintw(term, LINES - 9 + animation, 28+x_ofs,   " Murilo Cadanus da Costa ");
+        mvwprintw(term, LINES - 8 + animation, 28+x_ofs,   "                         ");        
+        
+        wmove(term,0,0);
+		wrefresh(term);
+        refresh();
+        
+        m_wait(DELAY + 400000);
+        
+        if (animation > 1)
+            animation--;
+    }
+    
+    wclear(term);
     
 }
 
@@ -137,7 +188,14 @@ void load_menu()
         game(term, x_ofs, y_ofs);
     }
     else if (option_menu == SAIR)
+    {
         quit_game(term);
+    }
+    else if (option_menu == CREDITOS)
+    {
+        show_credits();
+        load_menu();
+    }
 }
 
 void load_main_music()
@@ -154,6 +212,8 @@ void unload_main_music()
 int main()
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    unload_game_music();
+    unload_game_over_music();
     load_main_music();
     
     srand((int)time(NULL));

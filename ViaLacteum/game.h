@@ -30,3 +30,5 @@ void load_game_music();
 void unload_game_music();
 void play_game_music();
 void pause_game_music();
+void load_game_over_music();
+void unload_game_over_music();

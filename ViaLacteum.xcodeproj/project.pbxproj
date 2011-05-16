@@ -16,6 +16,7 @@
 		288E7246136B22AE001CE835 /* Select.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7243136B22A5001CE835 /* Select.wav */; };
 		288E7247136B22AE001CE835 /* Change.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7244136B22A5001CE835 /* Change.wav */; };
 		288E7249136B2C1F001CE835 /* Shoot.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7248136B2C1A001CE835 /* Shoot.wav */; };
+		288E724B136B5D37001CE835 /* Gameover.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E724A136B58FB001CE835 /* Gameover.wav */; };
 		28A83C5B1367910D00C4084A /* menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5A1367910C00C4084A /* menu.m */; };
 		28A83C5F136794EF00C4084A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5D136794EF00C4084A /* game.m */; };
 		E2C70FB31367269100B34ECB /* foe.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB11367269100B34ECB /* foe.c */; };
@@ -35,6 +36,7 @@
 			dstPath = resources;
 			dstSubfolderSpec = 16;
 			files = (
+				288E724B136B5D37001CE835 /* Gameover.wav in CopyFiles */,
 				288E7249136B2C1F001CE835 /* Shoot.wav in CopyFiles */,
 				288E7246136B22AE001CE835 /* Select.wav in CopyFiles */,
 				288E7247136B22AE001CE835 /* Change.wav in CopyFiles */,
@@ -57,6 +59,7 @@
 		288E7243136B22A5001CE835 /* Select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Select.wav; sourceTree = "<group>"; };
 		288E7244136B22A5001CE835 /* Change.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Change.wav; sourceTree = "<group>"; };
 		288E7248136B2C1A001CE835 /* Shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Shoot.wav; sourceTree = "<group>"; };
+		288E724A136B58FB001CE835 /* Gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Gameover.wav; sourceTree = "<group>"; };
 		28A83C5A1367910C00C4084A /* menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menu.m; sourceTree = "<group>"; };
 		28A83C5C1367913C00C4084A /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
 		28A83C5D136794EF00C4084A /* game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = game.m; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 		28274E37136A1D2600F1784B /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				288E724A136B58FB001CE835 /* Gameover.wav */,
 				288E7248136B2C1A001CE835 /* Shoot.wav */,
 				288E7243136B22A5001CE835 /* Select.wav */,
 				288E7244136B22A5001CE835 /* Change.wav */,

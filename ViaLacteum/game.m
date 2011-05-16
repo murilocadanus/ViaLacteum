@@ -22,6 +22,7 @@ const bitmask bitmask_player={0x38,0x7C,0xFE,0x7C,0x00};
 // This will be >0 if the player is dying */
 int exploding = 0; 
 NSSound *gameMusic;
+NSSound *gameOverMusic;
 NSSound *shoot;
 
 int collide_player(int x)
@@ -111,7 +112,9 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 		// Check for collision with foes
 		if (collide_player(x))
 		{
-			exploding = 1;
+			//exploding = 1;
+            game_over(term, 37, y_ofs);
+            main();
 		}
 	}
 	else
@@ -263,6 +266,9 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
 {
 	int y;
     
+    unload_game_music();
+    load_game_over_music();
+    
     // Faz a levitacao
 	for (y=21;y>-7;y--)
 	{
@@ -297,7 +303,7 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
     SET_COLOR(COL_WHITE);
     
     int j = 0;
-    for (j=0; j<18; j++)
+    while (wgetch(term) == ERR)
     {    
         mvwprintw(term, 2, 28 ,    "        GAME OVER       ");             
         
@@ -335,6 +341,7 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
         
 		m_wait(DELAY + 400000);
         wclear(term);
+        j++;
     }
 }
 
@@ -360,6 +367,19 @@ int show_dialogs()
     
     return 0;
 }
+
+void load_game_over_music()
+{
+    gameOverMusic = [[NSSound alloc] initWithContentsOfFile:@"resources/Gameover.wav" byReference:YES];
+    [gameOverMusic setCurrentTime:0.0];
+    [gameOverMusic play];
+}
+
+void unload_game_over_music()
+{
+    [gameOverMusic stop];
+}
+
 
 void load_game_music()
 {
@@ -420,7 +440,6 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
         
     }    
     
-    // TODO ALTERAR O GAME OVER
     if (input_result == 'V')
     {
         load_menu();
