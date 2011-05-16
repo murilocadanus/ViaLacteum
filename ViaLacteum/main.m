@@ -227,7 +227,7 @@ int main()
 	if (!right_size())
 	{
 		endwin();
-		fprintf(stderr,"Invasores precisa de um terminal 80x25!\n");
+		fprintf(stderr,"Invasores roda em uma janela terminal com 80x25!\n");
 		return -1;
 	}
     

@@ -95,7 +95,7 @@ void blit_the_grey(int x,int y)
 -----  
 \\ //  
   _   
-/ # \  
+/ | \  
  / \  
 */
 	if (is_y_range(y))
@@ -122,7 +122,7 @@ void blit_the_grey(int x,int y)
 	if (is_y_range(y+3))
 	{
 		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y+3,x,"/ # \\");
+		mvwprintw(term,y+3,x,"/ | \\");
 	}
 	if (is_y_range(y+4))
 	{
@@ -197,7 +197,7 @@ void blit_player_right(int x,int y)
     
     if (is_y_range(y+3))
     {
-        SET_COLOR(COL_YELLOW);
+        SET_COLOR(COL_DARKCYAN);
         mvwprintw(term,y+3,x+1,"/ ||");
         SET_COLOR(COL_RED);
         wprintw(term," @-");
@@ -205,15 +205,15 @@ void blit_player_right(int x,int y)
     
     if (is_y_range(y+4))
     {
-        SET_COLOR(COL_GRAY);
+        SET_COLOR(COL_DARKCYAN);
         mvwprintw(term,y+4,x+2,"/  \\");
     }
     
     if (is_y_range(y+5))
     {
-        SET_COLOR(COL_GRAY);
+        SET_COLOR(COL_RED);
         mvwprintw(term,y+5,x+1,"/_ ");
-        SET_COLOR(COL_DARKCYAN);
+        SET_COLOR(COL_RED);
         wprintw(term,"  \\_");
     }
     SET_COLOR(COL_BKG);
@@ -274,7 +274,7 @@ _/   _\
     
     if (is_y_range(y+4))
     {
-        SET_COLOR(COL_GRAY);
+        SET_COLOR(COL_DARKCYAN);
         mvwprintw(term,y+4,x+2,"/  \\");
     }
     
@@ -282,7 +282,7 @@ _/   _\
     {
         SET_COLOR(COL_GRAY);
         mvwprintw(term,y+5,x,"_/ ");
-        SET_COLOR(COL_DARKCYAN);
+        SET_COLOR(COL_RED);
         wprintw(term,"  _\\");
     }
     SET_COLOR(COL_BKG);

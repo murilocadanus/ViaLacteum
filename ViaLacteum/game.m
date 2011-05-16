@@ -445,7 +445,7 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
 
         blit_foes();
         blit_fires();
-        blit_score(74+x_ofs,y_ofs,score);
+        blit_score(74+x_ofs,y_ofs, score);
         blit_borders(COL_GREEN);
         
         if (input_result == 'Q') // Sair do jogo
