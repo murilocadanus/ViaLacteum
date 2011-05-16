@@ -180,21 +180,26 @@ int right_size()
 
 void load_menu()
 {
-    wclear(term);
-    int option_menu = menu(term, x_ofs, y_ofs);
-    
-    if (option_menu == NOVO_JOGO)
+    int option_menu = INICIO;
+    while (true)
     {
-        game(term, x_ofs, y_ofs);
-    }
-    else if (option_menu == SAIR)
-    {
-        quit_game(term);
-    }
-    else if (option_menu == CREDITOS)
-    {
-        show_credits();
-        load_menu();
+        wclear(term);
+        option_menu = menu(term, x_ofs, y_ofs);
+        
+        if (option_menu == NOVO_JOGO)
+        {
+            option_menu = game(term, x_ofs, y_ofs);
+        }
+        if (option_menu == SAIR)
+        {
+            quit_game(term);
+            return;
+        }
+        if (option_menu == CREDITOS)
+        {
+            show_credits();
+            load_menu();
+        }
     }
 }
 
@@ -222,7 +227,7 @@ int main()
 	if (!right_size())
 	{
 		endwin();
-		fprintf(stderr,"Vialacteum must be run in an 80x25 terminal!\n");
+		fprintf(stderr,"Invasores precisa de um terminal 80x25!\n");
 		return -1;
 	}
     

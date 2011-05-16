@@ -114,8 +114,8 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 		{
 			//exploding = 1;
             game_over(term, 37, y_ofs);
-            main();
-		}
+            c = 'O';		
+        }
 	}
 	else
 	{
@@ -406,32 +406,20 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
         blit_borders(COL_GREEN);
         
         if (input_result == 'Q') // Sair do jogo
-            break;
+        {
+            return SAIR;
+        }
         else if (input_result == 'V') // Voltar para o menu
-            break;
+            return INICIO;
+        else if (input_result == 'O') // Game Over
+            return INICIO;
         
     }    
-    
-    if (input_result == 'V')
-    {
-        load_menu();
-        
-        // Utilizar para o game over
-        //game_over(term, 37, y_ofs);
-        //main();
-    }
     
 	if (game_ended)
 	{
 		end_game(term, x_ofs, y_ofs);
 	}
-    
-	// Flush input
-	while (wgetch(term) != ERR);
-    
-	endwin();
-    
-	if (game_ended) final();
     
 	return quit_game(term);
 }
