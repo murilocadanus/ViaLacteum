@@ -375,10 +375,53 @@ void play_game_music()
     [gameMusic play];
 }
 
+void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
+{
+    blit_borders(COL_BLUE);
+    int iteraction = 0;
+    int animation = 20;
+    
+    for (int i=0; i<20; i++)
+    {
+        iteraction++;
+        SET_COLOR(COL_GREEN);
+        
+        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                      ");
+        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "   _____            _            __    ");
+        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, "  / ___ \\          | |          /  |   ");
+        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, " | |   | |____   _ | | ____    /_/ |   ");
+        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, " | |   | |  _ \\ / || |/ _  |     | |   ");
+        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, " | |___| | | | ( (_| ( ( | |     | |   ");
+        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, "  \\_____/|_| |_|\\____|\\_||_|     |_|   ");
+        
+        mvwprintw(term, LINES - 16 + animation, 18+x_ofs, "                                      ");
+        mvwprintw(term, LINES - 15 + animation, 18+x_ofs, "                                      ");
+        mvwprintw(term, LINES - 14 + animation, 18+x_ofs, "                                      ");        
+        
+        SET_COLOR(COL_WHITE);
+        
+        mvwprintw(term, LINES - 13 + animation, 18+x_ofs,  "     Os Invasores estao na sua casa!   ");
+        mvwprintw(term, LINES - 12 + animation, 18+x_ofs,  "                                       ");        
+        mvwprintw(term, LINES - 11 + animation, 18+x_ofs,  "   Voce esta em seu quarto, defenda-se ");
+        mvwprintw(term, LINES - 10 + animation, 18+x_ofs,  "                                       ");                
+        
+        wmove(term,0,0);
+		wrefresh(term);
+        refresh();
+        
+        m_wait(DELAY + 400000);
+        
+        if (animation > 1)
+            animation--;
+    }
+}
+
 int game(WINDOW *term, int x_ofs, int y_ofs)
 {   
     unload_main_music();
     load_game_music();
+    
+    load_wave_presentation(term, x_ofs, y_ofs);
     
     init_foes();
     init_waves();

@@ -376,6 +376,39 @@ void blit_scene()
        
 }
 
+void blit_scene2()
+{
+    //init_color_pairs();
+    
+    SET_COLOR(COL_GREEN);
+    mvwprintw(term,1,0,   "_______________________________________________________________________________");
+    mvwprintw(term,2,0,   "...............................................................................");
+    mvwprintw(term,3,0,   "                                                                               ");
+    mvwprintw(term,4,0,   "                                                                               ");
+    mvwprintw(term,5,0,   "                                 __________________                            ");
+    mvwprintw(term,6,0,   "                                |                  |                           ");  
+    mvwprintw(term,7,0,   "                                |     __    _      |                           ");  
+    mvwprintw(term,8,0,   "                                |    |__|  / \\     |                          ");
+    mvwprintw(term,9,0,   "                                |    _    /   \\    |                          ");
+    mvwprintw(term,10,0,  "                                |   / \\  /     \\   |                         ");
+    mvwprintw(term,11,0,  "                                |  /   \\/       \\  |                         ");
+    mvwprintw(term,12,0,  "                /--\\            | /     \\        \\ |                        ");
+    mvwprintw(term,13,0,  "               /    \\           |/_______\\________\\|                        ");
+    mvwprintw(term,14,0,  "              |______|                                                         ");
+    mvwprintw(term,15,0,  "                 ||                                                            ");
+    mvwprintw(term,16,0,  "                 ||             ______________________                         ");                    
+    mvwprintw(term,17,0,  "                 ||          _ /                      \\ _                     ");                    
+    mvwprintw(term,18,0,  "                 ||         | |   o       o        o   | |                     ");                    
+    mvwprintw(term,19,0,  "                 ||         \\ \\________________________/ /                   ");                    
+    mvwprintw(term,20,0,  "                 ||          | |______|_______|_______| |                      ");                    
+    mvwprintw(term,21,0,  "                 ||          |                          |                      ");                   
+    mvwprintw(term,22,0,  ".............................|..........................|......................");
+    mvwprintw(term,23,0,  "_______________________________________________________________________________");    
+    
+}
+
+
+
 void init_color_pairs() {
     short f, b;
     for( f = 0; f < COLORS; ++f )
