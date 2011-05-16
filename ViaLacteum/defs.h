@@ -50,6 +50,7 @@
 #define COL_BKG          COL_BLUE
 
 // MENU
+#define INICIO 0
 #define NOVO_JOGO 1
 #define OPCOES 2
 #define CREDITOS 3
