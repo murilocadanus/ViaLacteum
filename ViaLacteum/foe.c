@@ -9,6 +9,7 @@
 #include "blit.h"
 #include "util.h"
 #include "waves.h"
+#include <stdio.h>
 
 extern int x_ofs;
 extern int y_ofs;
@@ -60,7 +61,8 @@ void move_foe_straight_left(void *al_ptr)
             fo->x--;
             break;
 	}
-	if ((fo->x)<0) fo->type=AT_NONE;
+    
+	if ((fo->x)<50) fo->type=AT_NONE;
 }
 
 
@@ -111,32 +113,34 @@ void move_foes()
 		{
             case AT_GREY_FOE:
                 all_foes[i].move((void*)&all_foes[i]);
-                break;
+            break;
+                
             case AT_XP:
                 switch (all_foes[i].state++)
-			{
-                case 0:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
+                {
+                    case 0:
+                        all_foes[i].blit = blit_explosion_1;
+                        all_foes[i].clear = clear_explosion_1;
                     break;
-                case 2:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
+                    case 2:
+                        all_foes[i].blit = blit_explosion_1;
+                        all_foes[i].clear = clear_explosion_1;
                     break;
-                case 4:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
+                    case 4:
+                        all_foes[i].blit = blit_explosion_1;
+                        all_foes[i].clear = clear_explosion_1;
                     break;
-                case 6:
-                    all_foes[i].blit = blit_explosion_1;
-                    all_foes[i].clear = clear_explosion_1;
-                    all_foes[i].type = AT_LAST;
+                    case 6:
+                        all_foes[i].blit = blit_explosion_1;
+                        all_foes[i].clear = clear_explosion_1;
+                        all_foes[i].type = AT_LAST;
                     break;
-			}
-                break;
+                }
+            break;
+                
             case AT_LAST:
                 all_foes[i].type = AT_NONE;
-                break;
+            break;
 		}
 	}
 }

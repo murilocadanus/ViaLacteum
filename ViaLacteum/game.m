@@ -197,34 +197,6 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
 
 void m_wait(long delay)
 {
-    /*
-     // This is an algorithm I've tested to uniform speed on every CPU, but
-     // gettimeofday resolution isn't very high and I got also very strange
-     // and not uniform results...
-     
-     static struct timeval last={0,0};
-     struct timeval now;
-     long diff;
-     
-     if (gettimeofday(&now,NULL)<0)
-     {
-     // Error in gettimeofday... using old algorithm
-     diff=0;
-     }
-     else
-     {
-     fprintf(stderr,"%lu . %lu - ",now.tv_sec,now.tv_usec);
-     if (last.tv_sec==0) last=now;
-     diff=(now.tv_sec-last.tv_sec)*1000000 + (now.tv_usec-last.tv_usec);
-     last=now;
-     }
-     
-     fprintf(stderr,"diff: %d, waiting %lu\n",diff,(delay-diff>0)?delay-diff:0);
-     if (delay-diff>0)
-     usleep(delay-diff);
-     
-     return;
-     */
 	usleep((int)delay);
 }
 
