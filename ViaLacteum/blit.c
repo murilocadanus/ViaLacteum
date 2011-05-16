@@ -106,13 +106,7 @@ void blit_the_grey(int x,int y)
 	if (is_y_range(y+1))
 	{
 		SET_COLOR(COL_GRAY);
-		mvwprintw(term,y+1,x,"\\");
-   		SET_COLOR(COL_RED);
-        wprintw(term,"\\ ");
-   		SET_COLOR(COL_RED);
-        wprintw(term,"/");
-		SET_COLOR(COL_GRAY);
-        wprintw(term,"/");
+		mvwprintw(term,y+1,x,"\\\\ //");
 	}
 	if (is_y_range(y+2))
 	{
@@ -137,7 +131,7 @@ void clear_the_grey(int x, int y)
 {
 	SET_COLOR(COL_BKG);
 	if (is_y_range(y)) mvwprintw(term,y,x,       "     ");
-	if (is_y_range(y+1)) mvwprintw(term,y+1,x+1, "    ");
+	if (is_y_range(y+1)) mvwprintw(term,y+1,x,   "     ");
 	if (is_y_range(y+2)) mvwprintw(term,y+2,x+1, " ");
 	if (is_y_range(y+3)) mvwprintw(term,y+3,x+1, "     ");
 	if (is_y_range(y+4)) mvwprintw(term,y+4,x+1, "    ");
