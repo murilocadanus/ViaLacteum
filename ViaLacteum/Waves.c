@@ -99,10 +99,12 @@ char wave_4[] = {
     0x01,0x60, 0, AT_NONE, 0, 0, 0, MOVE_STRAIGHT_LEFT,  -1    
 };
 char *wave;
+int wave_num;
 
 void init_waves()
 {
 	wave = wave_1;
+    wave_num = 1;
 }
 
 char *next_wave(const char *actual)
@@ -114,17 +116,19 @@ char *next_wave(const char *actual)
     {
         printf("Wave: 2 - Sala de estar");
         next = wave_2;
-
+        wave_num = 2;
     }
 	else if (actual == wave_2)
     {
         printf("Wave: 3 - Garagem");
-        next = wave_3;   
+        next = wave_3;
+        wave_num = 3;
     }
 	else if (actual == wave_3)
     {
         printf("Wave: 4 - Cozinha");
-        next = wave_4;   
+        next = wave_4;
+        wave_num = 4;
     }
 	else if (actual == wave_4) next = NULL;
 	else next = wave_1;   
@@ -206,4 +210,9 @@ int create_foes()
 	moment++;
     
 	return 1;
+}
+
+int get_wave_num()
+{
+    return wave_num;
 }

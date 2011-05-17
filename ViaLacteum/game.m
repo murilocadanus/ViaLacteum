@@ -244,7 +244,7 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
     // Faz a levitacao
 	for (y=21;y>-7;y--)
 	{
-        blit_scene();
+        blit_scene(get_wave_num());
         clear_player_right(end_x+x_ofs,y+y_ofs);
         clear_player_left(end_x+x_ofs,y+y_ofs);
         
@@ -435,13 +435,13 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
     init_foes();
     init_waves();
     show_dialogs();
-    blit_scene();
+    blit_scene(1);
     
     char input_result = ' ';
     
     while ((input_result = move_player(term, x_ofs, y_ofs)))
     {        
-        blit_scene();
+        blit_scene(get_wave_num());
         
         m_wait(DELAY);
 

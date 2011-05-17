@@ -15,4 +15,7 @@ void init_waves();
 // Returns 0 if the game is over
 int create_foes();
 
+// Returns current wave number
+int get_wave_num();
+
 #endif //_WAVES_H
