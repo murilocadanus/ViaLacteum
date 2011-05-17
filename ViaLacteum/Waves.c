@@ -112,12 +112,13 @@ char *next_wave(const char *actual)
     // Sequential algorithm
 	if (actual == wave_1)
     {
-        printf("Wave: 2 - Garagem");
+        printf("Wave: 2 - Sala de estar");
         next = wave_2;
+
     }
 	else if (actual == wave_2)
     {
-        printf("Wave: 3 - Sala de estar");
+        printf("Wave: 3 - Garagem");
         next = wave_3;   
     }
 	else if (actual == wave_3)
