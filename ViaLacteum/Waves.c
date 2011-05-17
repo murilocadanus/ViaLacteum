@@ -35,27 +35,69 @@ extern const bitmask bitmask_foe;
 #define MOVE_STRAIGHT_RIGHT 1
 #define MOVE_STRAIGHT_LEFT  2
 
-char wave_1[] = {
+char wave_1[] = {    
     0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
-    0x00,0x08, 1, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
-    0x00,0x0C, 2, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
-    0x00,0x14, 3, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
-    0x00,0x18, 4, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
-    0x00,0x1C, 5, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1
+    0x00,0x04, 1, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x08, 2, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0x0C, 3, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x10, 4, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    
+    0x00,0xB0, 5, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0xB2, 6, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0xB4, 7, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0xB6, 8, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0xB8, 9, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    
+    0x01,0x60, 0, AT_NONE, 0, 0, 0, MOVE_STRAIGHT_LEFT,  -1    
 };
 
-char wave_2[] = {
-    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1
+char wave_2[] = {    
+    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0x04, 1, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x08, 2, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0x0C, 3, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x10, 4, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+        
+    0x01,0x10, 5, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x01,0x14, 6, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x01,0x18, 7, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x01,0x1C, 8, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x01,0x20, 9, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    
+    0x01,0x60, 0, AT_NONE, 0, 0, 0, MOVE_STRAIGHT_LEFT,  -1    
 };
 
-char wave_3[] = {
-    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1
+char wave_3[] = {    
+    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0x04, 1, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x08, 2, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0x0C, 3, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x10, 4, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+        
+    0x01,0x10, 5, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x01,0x14, 6, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x01,0x18, 7, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x01,0x1C, 8, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x01,0x20, 9, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    
+    0x01,0x60, 0, AT_NONE, 0, 0, 0, MOVE_STRAIGHT_LEFT,  -1    
 };
 
-char wave_4[] = {
-    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1
+char wave_4[] = {    
+    0x00,0x00, 0, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0x04, 1, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x08, 2, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x00,0x0C, 3, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x00,0x10, 4, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+        
+    0x01,0x10, 5, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x01,0x14, 6, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x01,0x18, 7, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    0x01,0x1C, 8, AT_GREY_FOE, 80, 19, 0, MOVE_STRAIGHT_LEFT, -1,
+    0x01,0x20, 9, AT_GREY_FOE, 0, 19, 0, MOVE_STRAIGHT_RIGHT, -1,
+    
+    0x01,0x60, 0, AT_NONE, 0, 0, 0, MOVE_STRAIGHT_LEFT,  -1    
 };
-
 char *wave;
 
 void init_waves()
@@ -68,11 +110,23 @@ char *next_wave(const char *actual)
 	char *next = wave_1;
 
     // Sequential algorithm
-	if (actual == wave_1) next = wave_2;
-	else if (actual == wave_2) next = wave_3;
-	else if (actual == wave_3) next = wave_4;
+	if (actual == wave_1)
+    {
+        printf("Wave: 2 - Garagem");
+        next = wave_2;
+    }
+	else if (actual == wave_2)
+    {
+        printf("Wave: 3 - Sala de estar");
+        next = wave_3;   
+    }
+	else if (actual == wave_3)
+    {
+        printf("Wave: 4 - Cozinha");
+        next = wave_4;   
+    }
 	else if (actual == wave_4) next = NULL;
-	else next = wave_1;
+	else next = wave_1;   
     
 	return next;
 }
@@ -114,10 +168,10 @@ int create_foes()
                 ar_num = wave[lev_count+2];
                 
                 all_foes[ar_num].type = wave[lev_count+3];
-                
+                                
                 switch (all_foes[ar_num].type)
                 {
-                    case AT_GREY_FOE:                        
+                    case AT_GREY_FOE:
                         all_foes[ar_num].blit = blit_the_grey;
                         all_foes[ar_num].clear = clear_the_grey;
 

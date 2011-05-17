@@ -143,7 +143,8 @@ void move_foes()
                         all_foes[i].clear = clear_explosion_1;
                         all_foes[i].type = AT_LAST;
                     break;
-                }
+                }                
+                
             break;
                 
             case AT_LAST:
