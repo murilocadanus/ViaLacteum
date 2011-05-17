@@ -71,11 +71,10 @@ void move_foe_straight_left(void *al_ptr)
 
 
 void init_foes()
-{    
+{   
     // Init sound when a foe is hit
     zap = [[NSSound alloc] initWithContentsOfFile:@"resources/Blip.wav" byReference:YES];
-    [zap setCurrentTime:0.0];
-
+    
    	int i;
     
 	for (i=0;i<NUM_FOES;i++)
@@ -157,7 +156,7 @@ void move_foes()
 
 // Blows foe num and update score
 void blow_foe(int num)
-{
+{    
 	int i;
 	for (i=0;i<MAX_HEIGHT;i++)
 		all_foes[num].collide[i]=0x00;
@@ -172,6 +171,7 @@ void blow_foe(int num)
             all_foes[num].state = 0;
             all_foes[num].x++;
             all_foes[num].y++;
+            [zap setCurrentTime:0.0];
             [zap play];
             break;
 	}

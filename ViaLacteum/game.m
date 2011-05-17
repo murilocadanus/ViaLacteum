@@ -315,6 +315,8 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
         wclear(term);
         j++;
     }
+    
+    unload_game_over_music();
 }
 
 void final()
@@ -419,6 +421,8 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
         if (animation > 1)
             animation--;
     }
+    wrefresh(term);
+    refresh();
 }
 
 int game(WINDOW *term, int x_ofs, int y_ofs)

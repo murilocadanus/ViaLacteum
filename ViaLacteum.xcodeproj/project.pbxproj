@@ -19,6 +19,7 @@
 		288E724B136B5D37001CE835 /* Gameover.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E724A136B58FB001CE835 /* Gameover.wav */; };
 		28A83C5B1367910D00C4084A /* menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5A1367910C00C4084A /* menu.m */; };
 		28A83C5F136794EF00C4084A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5D136794EF00C4084A /* game.m */; };
+		28CB09EF1381AC19002BA9C6 /* Blip.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2DD28D413819F9A005F1275 /* Blip.wav */; };
 		E2C70FB31367269100B34ECB /* foe.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB11367269100B34ECB /* foe.m */; };
 		E2C70FB91367503400B34ECB /* waves.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB71367503400B34ECB /* waves.c */; };
 		E2C70FBC136753C100B34ECB /* fire.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FBA136753C100B34ECB /* fire.c */; };
@@ -36,6 +37,7 @@
 			dstPath = resources;
 			dstSubfolderSpec = 16;
 			files = (
+				28CB09EF1381AC19002BA9C6 /* Blip.wav in CopyFiles */,
 				288E724B136B5D37001CE835 /* Gameover.wav in CopyFiles */,
 				288E7249136B2C1F001CE835 /* Shoot.wav in CopyFiles */,
 				288E7246136B22AE001CE835 /* Select.wav in CopyFiles */,
