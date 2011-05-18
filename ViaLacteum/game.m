@@ -275,37 +275,39 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
     SET_COLOR(COL_WHITE);
     
     int j = 0;
-    while (wgetch(term) == ERR)
+    while (wgetch(term) != KEY_ESC)
     {    
-        mvwprintw(term, 2, 28 ,    "        GAME OVER       ");             
+        mvwprintw(term, 1, 28 ,    "        GAME OVER       ");             
         
-        mvwprintw(term, 4, 28 ,    "         #iiiii#     ");     
-        mvwprintw(term, 5, 28 ,    "       #iEKWWWKEi#       ");
-        mvwprintw(term, 6, 28 ,    "      iEKKKW#WKKKEi      ");
-        mvwprintw(term, 7, 28 ,    "     #EWWKKW#WKKWWE#     ");
-        mvwprintw(term, 8, 28 ,    "    #EWKEKWKKKWKEKWE#    ");
-        mvwprintw(term, 9, 28 ,    "    #EW EWKWWWKWE WE#    ");
-        mvwprintw(term, 10, 28 ,    "    #EK  EEKKKEE  KE#    ");
-        mvwprintw(term, 11, 28 ,    "    #EK   EEKEE   KE#    ");
-        mvwprintw(term, 12, 28 ,    "    #EK    WWW    KE#    ");
-        mvwprintw(term, 13, 28 ,   "     iK    EWE    Ki     ");
-        mvwprintw(term, 14, 28 ,   "     #EK   EWE   KE#     ");
-        mvwprintw(term, 15, 28 ,   "     #EWEE E#E EEWE#     ");
-        mvwprintw(term, 16, 28 ,   "      #KW#KKKKK#WK#      ");
-        mvwprintw(term, 17, 28 ,   "       iWWWKEKWWWi       ");
-        mvwprintw(term, 18, 28 ,   "        #KWKEKWK#        ");
+        mvwprintw(term, 3, 28 ,    "         #iiiii#     ");     
+        mvwprintw(term, 4, 28 ,    "       #iEKWWWKEi#       ");
+        mvwprintw(term, 5, 28 ,    "      iEKKKW#WKKKEi      ");
+        mvwprintw(term, 6, 28 ,    "     #EWWKKW#WKKWWE#     ");
+        mvwprintw(term, 7, 28 ,    "    #EWKEKWKKKWKEKWE#    ");
+        mvwprintw(term, 8, 28 ,    "    #EW EWKWWWKWE WE#    ");
+        mvwprintw(term, 9, 28 ,    "    #EK  EEKKKEE  KE#    ");
+        mvwprintw(term, 10, 28 ,    "    #EK   EEKEE   KE#    ");
+        mvwprintw(term, 11, 28 ,    "    #EK    WWW    KE#    ");
+        mvwprintw(term, 12, 28 ,   "     iK    EWE    Ki     ");
+        mvwprintw(term, 13, 28 ,   "     #EK   EWE   KE#     ");
+        mvwprintw(term, 14, 28 ,   "     #EWEE E#E EEWE#     ");
+        mvwprintw(term, 15, 28 ,   "      #KW#KKKKK#WK#      ");
+        mvwprintw(term, 16, 28 ,   "       iWWWKEKWWWi       ");
+        mvwprintw(term, 17, 28 ,   "        #KWKEKWK#        ");
         if (j % 2)
-            mvwprintw(term, 19, 28 ,   "         #KW WK#         ");
+            mvwprintw(term, 18, 28 ,   "         #KW WK#         ");
         else
-            mvwprintw(term, 19, 28 ,   "         #KWWWK#         ");
-        mvwprintw(term, 20, 28 ,   "          #KWK#          ");
-        mvwprintw(term, 21, 28 ,   "           #i#           "); 
+            mvwprintw(term, 18, 28 ,   "         #KWWWK#         ");
+        mvwprintw(term, 19, 28 ,   "          #KWK#          ");
+        mvwprintw(term, 20, 28 ,   "           #i#           "); 
         
         
         if (j % 2)
-            mvwprintw(term, 23, 32 ,   "Você foi abduzido...");
+            mvwprintw(term, 22, 32 ,   "Você foi abduzido...");
         else
-            mvwprintw(term, 23, 28 ,   "");
+            mvwprintw(term, 22, 28 ,   "");
+
+        mvwprintw(term, 24, 28 , "Precione Esc para continuar... ");
         
         wmove(term,0,0);
 		wrefresh(term);
@@ -381,9 +383,9 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
 {
     blit_borders(COL_BLUE);
     int iteraction = 0;
-    int animation = 20;
+    int animation = 22;
     
-    for (int i=0; i<20; i++)
+    for (int i=0; i<27; i++)
     {
         if (wgetch(term) != ERR)
         {
@@ -393,24 +395,31 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
         iteraction++;
         SET_COLOR(COL_GREEN);
         
-        
-        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                      ");
-        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "               .-\"\"`\"\"-.              ");
-        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, "            _/`         `\\_           ");
-        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, "           '.-=-=-=-=-=-=-.'          ");
-        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, "             '-=.=-.-=.=-'            ");
-        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, "                 /   \\                ");
-        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, "                /     \\               ");
-        mvwprintw(term, LINES - 16 + animation, 18+x_ofs, "               /       \\              ");
-        mvwprintw(term, LINES - 15 + animation, 18+x_ofs, "              /         \\             ");
-        mvwprintw(term, LINES - 14 + animation, 18+x_ofs, "             /           \\            ");        
+        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                         ");
+        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "               .-\"\"`\"\"-.             ");
+        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, "            _/`         `\\_             ");
+        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, "           '.-=-=-=-=-=-=-.'             ");
+        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, "             '-=.=-.-=.=-'               ");
+        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, "                 _                       ");
+        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, "            ____|_|_________             ");
+        mvwprintw(term, LINES - 16 + animation, 18+x_ofs, "           /____|_|_________\\            ");
+        mvwprintw(term, LINES - 15 + animation, 18+x_ofs, "          /__________________\\           ");
+        mvwprintw(term, LINES - 14 + animation, 18+x_ofs, "         /____________________\\          ");        
+        mvwprintw(term, LINES - 13 + animation, 18+x_ofs, "          |   ____     ____  |           ");
+        mvwprintw(term, LINES - 12 + animation, 18+x_ofs, "          |  |)~~(|   |)~~(| |           ");        
+        mvwprintw(term, LINES - 11 + animation, 18+x_ofs, "          |  ||__||   ||__|| |           ");
+        mvwprintw(term, LINES - 10 + animation, 18+x_ofs, "        __|__________________|___        ");                                                    
+        mvwprintw(term, LINES - 9 + animation, 18+x_ofs,  "        | | | | | | | | | | | | |        ");
+        mvwprintw(term, LINES - 8 + animation, 18+x_ofs,  "        |_|_|_|_|_|_|_|_|_|_|_|_|        ");        
+        mvwprintw(term, LINES - 7 + animation, 18+x_ofs,  "        |-----------------------|        ");
+        mvwprintw(term, LINES - 6 + animation, 18+x_ofs,  "                                         ");                                      
         
         SET_COLOR(COL_WHITE);
         
-        mvwprintw(term, LINES - 13 + animation, 18+x_ofs,  "     Os Invasores estao na sua casa!   ");
-        mvwprintw(term, LINES - 12 + animation, 18+x_ofs,  "                                       ");        
-        mvwprintw(term, LINES - 11 + animation, 18+x_ofs,  "    Defenda-se para nao ser abduzido   ");
-        mvwprintw(term, LINES - 10 + animation, 18+x_ofs,  "                                       ");                
+        mvwprintw(term, LINES - 5 + animation, 18+x_ofs,  "                                         ");
+        mvwprintw(term, LINES - 4 + animation, 18+x_ofs,  "     Os Invasores estao na sua casa!     ");        
+        mvwprintw(term, LINES - 3 + animation, 18+x_ofs,  "                                         ");
+        mvwprintw(term, LINES - 2 + animation, 18+x_ofs,  "    Defenda-se para nao ser abduzido     ");                
         
         wmove(term,0,0);
 		wrefresh(term);
