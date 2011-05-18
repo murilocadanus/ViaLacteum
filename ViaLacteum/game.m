@@ -381,9 +381,9 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
 {
     blit_borders(COL_BLUE);
     int iteraction = 0;
-    int animation = 20;
+    int animation = 22;
     
-    for (int i=0; i<20; i++)
+    for (int i=0; i<27; i++)
     {
         if (wgetch(term) != ERR)
         {
@@ -393,24 +393,31 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
         iteraction++;
         SET_COLOR(COL_GREEN);
         
-        
-        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                      ");
-        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "               .-\"\"`\"\"-.              ");
-        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, "            _/`         `\\_           ");
-        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, "           '.-=-=-=-=-=-=-.'          ");
-        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, "             '-=.=-.-=.=-'            ");
-        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, "                 /   \\                ");
-        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, "                /     \\               ");
-        mvwprintw(term, LINES - 16 + animation, 18+x_ofs, "               /       \\              ");
-        mvwprintw(term, LINES - 15 + animation, 18+x_ofs, "              /         \\             ");
-        mvwprintw(term, LINES - 14 + animation, 18+x_ofs, "             /           \\            ");        
+        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                         ");
+        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "               .-\"\"`\"\"-.             ");
+        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, "            _/`         `\\_             ");
+        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, "           '.-=-=-=-=-=-=-.'             ");
+        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, "             '-=.=-.-=.=-'               ");
+        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, "                 _                       ");
+        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, "            ____|_|_________             ");
+        mvwprintw(term, LINES - 16 + animation, 18+x_ofs, "           /____|_|_________\\            ");
+        mvwprintw(term, LINES - 15 + animation, 18+x_ofs, "          /__________________\\           ");
+        mvwprintw(term, LINES - 14 + animation, 18+x_ofs, "         /____________________\\          ");        
+        mvwprintw(term, LINES - 13 + animation, 18+x_ofs, "          |   ____     ____  |           ");
+        mvwprintw(term, LINES - 12 + animation, 18+x_ofs, "          |  |)~~(|   |)~~(| |           ");        
+        mvwprintw(term, LINES - 11 + animation, 18+x_ofs, "          |  ||__||   ||__|| |           ");
+        mvwprintw(term, LINES - 10 + animation, 18+x_ofs, "        __|__________________|___        ");                                                    
+        mvwprintw(term, LINES - 9 + animation, 18+x_ofs,  "        | | | | | | | | | | | | |        ");
+        mvwprintw(term, LINES - 8 + animation, 18+x_ofs,  "        |_|_|_|_|_|_|_|_|_|_|_|_|        ");        
+        mvwprintw(term, LINES - 7 + animation, 18+x_ofs,  "        |-----------------------|        ");
+        mvwprintw(term, LINES - 6 + animation, 18+x_ofs,  "                                         ");                                      
         
         SET_COLOR(COL_WHITE);
         
-        mvwprintw(term, LINES - 13 + animation, 18+x_ofs,  "     Os Invasores estao na sua casa!   ");
-        mvwprintw(term, LINES - 12 + animation, 18+x_ofs,  "                                       ");        
-        mvwprintw(term, LINES - 11 + animation, 18+x_ofs,  "    Defenda-se para nao ser abduzido   ");
-        mvwprintw(term, LINES - 10 + animation, 18+x_ofs,  "                                       ");                
+        mvwprintw(term, LINES - 5 + animation, 18+x_ofs,  "                                         ");
+        mvwprintw(term, LINES - 4 + animation, 18+x_ofs,  "     Os Invasores estao na sua casa!     ");        
+        mvwprintw(term, LINES - 3 + animation, 18+x_ofs,  "                                         ");
+        mvwprintw(term, LINES - 2 + animation, 18+x_ofs,  "    Defenda-se para nao ser abduzido     ");                
         
         wmove(term,0,0);
 		wrefresh(term);
