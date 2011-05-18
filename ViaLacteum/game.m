@@ -258,16 +258,16 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
         
 		m_wait(DELAY);
         
-		//delete_foes();
+		delete_foes();
 		delete_fires();
         
 		move_fires();
-		//move_foes();
+		move_foes();
         
-		//blit_foes();
+		blit_foes();
 		blit_fires();
 		blit_score(74+x_ofs,y_ofs,score);
-		//blit_borders(COL_RED);
+		blit_borders(COL_RED);
 	}
     
     wclear(term);

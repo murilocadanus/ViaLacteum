@@ -105,6 +105,8 @@ void init_waves()
 {
 	wave = wave_1;
     wave_num = 1;
+    
+    score = 0;
 }
 
 char *next_wave(const char *actual)
@@ -114,23 +116,28 @@ char *next_wave(const char *actual)
     // Sequential algorithm
 	if (actual == wave_1)
     {
-        printf("Wave: 2 - Sala de estar");
+        printf("Sala de estar");
         next = wave_2;
         wave_num = 2;
     }
 	else if (actual == wave_2)
     {
-        printf("Wave: 3 - Garagem");
+        printf("Garagem         ");
         next = wave_3;
         wave_num = 3;
     }
 	else if (actual == wave_3)
     {
-        printf("Wave: 4 - Cozinha");
+        printf("Cozinha         ");
         next = wave_4;
         wave_num = 4;
     }
-	else if (actual == wave_4) next = NULL;
+	else if (actual == wave_4)
+    {
+        printf("Quarto         ");
+        next = wave_1;
+        wave_num = 1;
+    }
 	else next = wave_1;   
     
 	return next;
@@ -138,9 +145,9 @@ char *next_wave(const char *actual)
 
 int create_foes()
 {
-	static unsigned short int moment=0;
-	static int lev_count=0;
-	static int ended=0;
+	static unsigned short int moment = 0;
+	static int lev_count = 0;
+	static int ended = 0;
     
 	if (ended)
 	{
