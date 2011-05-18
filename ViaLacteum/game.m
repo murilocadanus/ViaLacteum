@@ -393,23 +393,23 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
         iteraction++;
         SET_COLOR(COL_GREEN);
         
-        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                      ");
-        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "   _____            _            __    ");
-        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, "  / ___ \\          | |          /  |   ");
-        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, " | |   | |____   _ | | ____    /_/ |   ");
-        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, " | |   | |  _ \\ / || |/ _  |     | |   ");
-        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, " | |___| | | | ( (_| ( ( | |     | |   ");
-        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, "  \\_____/|_| |_|\\____|\\_||_|     |_|   ");
         
-        mvwprintw(term, LINES - 16 + animation, 18+x_ofs, "                                      ");
-        mvwprintw(term, LINES - 15 + animation, 18+x_ofs, "                                      ");
-        mvwprintw(term, LINES - 14 + animation, 18+x_ofs, "                                      ");        
+        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                      ");
+        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "               .-\"\"`\"\"-.              ");
+        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, "            _/`         `\\_           ");
+        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, "           '.-=-=-=-=-=-=-.'          ");
+        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, "             '-=.=-.-=.=-'            ");
+        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, "                 /   \\                ");
+        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, "                /     \\               ");
+        mvwprintw(term, LINES - 16 + animation, 18+x_ofs, "               /       \\              ");
+        mvwprintw(term, LINES - 15 + animation, 18+x_ofs, "              /         \\             ");
+        mvwprintw(term, LINES - 14 + animation, 18+x_ofs, "             /           \\            ");        
         
         SET_COLOR(COL_WHITE);
         
         mvwprintw(term, LINES - 13 + animation, 18+x_ofs,  "     Os Invasores estao na sua casa!   ");
         mvwprintw(term, LINES - 12 + animation, 18+x_ofs,  "                                       ");        
-        mvwprintw(term, LINES - 11 + animation, 18+x_ofs,  "   Voce esta em seu quarto, defenda-se ");
+        mvwprintw(term, LINES - 11 + animation, 18+x_ofs,  "    Defenda-se para nao ser abduzido   ");
         mvwprintw(term, LINES - 10 + animation, 18+x_ofs,  "                                       ");                
         
         wmove(term,0,0);
