@@ -337,7 +337,7 @@ int quit_game(WINDOW *term)
 
 int show_dialogs()
 {
-    mvprintw(LINES - 1, 4, "Cuidado com os cinzentos.");
+    mvprintw(LINES - 1, 4, "Cuidado com os cinzentos.                                     ");
     
     return 0;
 }
