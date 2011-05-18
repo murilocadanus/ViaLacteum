@@ -7,25 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E2CA5F921365A0BA00C9186A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5F911365A0BA00C9186A /* main.c */; };
+		28274E2B1369E41300F1784B /* pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 28274E291369E41300F1784B /* pause.m */; };
+		28274E2F136A19F600F1784B /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28274E2E136A19F600F1784B /* AudioPlayer.m */; };
+		28274E33136A1B1C00F1784B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28274E32136A1B1C00F1784B /* Foundation.framework */; };
+		28274E35136A1B2600F1784B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28274E34136A1B2600F1784B /* AppKit.framework */; };
+		28274E39136A1D5300F1784B /* Invasores.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28274E38136A1D2600F1784B /* Invasores.wav */; };
+		288E7241136B1DE7001CE835 /* Gameplay.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7240136B1DD0001CE835 /* Gameplay.wav */; };
+		288E7246136B22AE001CE835 /* Select.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7243136B22A5001CE835 /* Select.wav */; };
+		288E7247136B22AE001CE835 /* Change.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7244136B22A5001CE835 /* Change.wav */; };
+		288E7249136B2C1F001CE835 /* Shoot.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E7248136B2C1A001CE835 /* Shoot.wav */; };
+		288E724B136B5D37001CE835 /* Gameover.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 288E724A136B58FB001CE835 /* Gameover.wav */; };
+		28A83C5B1367910D00C4084A /* menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5A1367910C00C4084A /* menu.m */; };
+		28A83C5F136794EF00C4084A /* game.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A83C5D136794EF00C4084A /* game.m */; };
+		28CB09EF1381AC19002BA9C6 /* Blip.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2DD28D413819F9A005F1275 /* Blip.wav */; };
+		E2C70FB31367269100B34ECB /* foe.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB11367269100B34ECB /* foe.m */; };
+		E2C70FB91367503400B34ECB /* waves.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FB71367503400B34ECB /* waves.c */; };
+		E2C70FBC136753C100B34ECB /* fire.c in Sources */ = {isa = PBXBuildFile; fileRef = E2C70FBA136753C100B34ECB /* fire.c */; };
+		E2CA5F921365A0BA00C9186A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5F911365A0BA00C9186A /* main.m */; };
+		E2CA5FF31366027000C9186A /* blit.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF11366027000C9186A /* blit.c */; };
+		E2CA5FF6136602D100C9186A /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = E2CA5FF4136602D100C9186A /* util.c */; };
+		E2E8727A136786EF0063A902 /* libncurses.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E87279136786EF0063A902 /* libncurses.5.4.dylib */; };
+		E2E8727C136786F70063A902 /* libmenu.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E8727B136786F70063A902 /* libmenu.5.4.dylib */; };
+		E2E8A6BD13843998004D9518 /* Scream.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2E8A6BC13843896004D9518 /* Scream.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E2CA5F8B1365A0BA00C9186A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = resources;
+			dstSubfolderSpec = 16;
 			files = (
+				E2E8A6BD13843998004D9518 /* Scream.mp3 in CopyFiles */,
+				28CB09EF1381AC19002BA9C6 /* Blip.wav in CopyFiles */,
+				288E724B136B5D37001CE835 /* Gameover.wav in CopyFiles */,
+				288E7249136B2C1F001CE835 /* Shoot.wav in CopyFiles */,
+				288E7246136B22AE001CE835 /* Select.wav in CopyFiles */,
+				288E7247136B22AE001CE835 /* Change.wav in CopyFiles */,
+				288E7241136B1DE7001CE835 /* Gameplay.wav in CopyFiles */,
+				28274E39136A1D5300F1784B /* Invasores.wav in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28274E291369E41300F1784B /* pause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pause.m; sourceTree = "<group>"; };
+		28274E2A1369E41300F1784B /* pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pause.h; sourceTree = "<group>"; };
+		28274E2D136A19F600F1784B /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
+		28274E2E136A19F600F1784B /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
+		28274E32136A1B1C00F1784B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		28274E34136A1B2600F1784B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		28274E38136A1D2600F1784B /* Invasores.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Invasores.wav; sourceTree = "<group>"; };
+		288E7240136B1DD0001CE835 /* Gameplay.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Gameplay.wav; sourceTree = "<group>"; };
+		288E7243136B22A5001CE835 /* Select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Select.wav; sourceTree = "<group>"; };
+		288E7244136B22A5001CE835 /* Change.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Change.wav; sourceTree = "<group>"; };
+		288E7248136B2C1A001CE835 /* Shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Shoot.wav; sourceTree = "<group>"; };
+		288E724A136B58FB001CE835 /* Gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Gameover.wav; sourceTree = "<group>"; };
+		28A83C5A1367910C00C4084A /* menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menu.m; sourceTree = "<group>"; };
+		28A83C5C1367913C00C4084A /* menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menu.h; sourceTree = "<group>"; };
+		28A83C5D136794EF00C4084A /* game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = game.m; sourceTree = "<group>"; };
+		28A83C5E136794EF00C4084A /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		E2C70FB11367269100B34ECB /* foe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foe.m; sourceTree = "<group>"; };
+		E2C70FB21367269100B34ECB /* foe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foe.h; sourceTree = "<group>"; };
+		E2C70FB71367503400B34ECB /* waves.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = waves.c; sourceTree = "<group>"; };
+		E2C70FB81367503400B34ECB /* waves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waves.h; sourceTree = "<group>"; };
+		E2C70FBA136753C100B34ECB /* fire.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fire.c; sourceTree = "<group>"; };
+		E2C70FBB136753C100B34ECB /* fire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fire.h; sourceTree = "<group>"; };
 		E2CA5F8D1365A0BA00C9186A /* ViaLacteum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ViaLacteum; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2CA5F911365A0BA00C9186A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		E2CA5F931365A0BA00C9186A /* ViaLacteum.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ViaLacteum.1; sourceTree = "<group>"; };
+		E2CA5F911365A0BA00C9186A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E2CA5FEF1365FF7400C9186A /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		E2CA5FF11366027000C9186A /* blit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blit.c; sourceTree = "<group>"; };
+		E2CA5FF21366027000C9186A /* blit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blit.h; sourceTree = "<group>"; };
+		E2CA5FF4136602D100C9186A /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		E2CA5FF5136602D100C9186A /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		E2DD28D413819F9A005F1275 /* Blip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Blip.wav; path = ViaLacteum/Resources/Blip.wav; sourceTree = SOURCE_ROOT; };
+		E2E87279136786EF0063A902 /* libncurses.5.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libncurses.5.4.dylib; path = usr/lib/libncurses.5.4.dylib; sourceTree = SDKROOT; };
+		E2E8727B136786F70063A902 /* libmenu.5.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmenu.5.4.dylib; path = usr/lib/libmenu.5.4.dylib; sourceTree = SDKROOT; };
+		E2E8A6BC13843896004D9518 /* Scream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Scream.mp3; path = ViaLacteum/Resources/Scream.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,15 +92,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28274E35136A1B2600F1784B /* AppKit.framework in Frameworks */,
+				28274E33136A1B1C00F1784B /* Foundation.framework in Frameworks */,
+				E2E8727C136786F70063A902 /* libmenu.5.4.dylib in Frameworks */,
+				E2E8727A136786EF0063A902 /* libncurses.5.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28274E37136A1D2600F1784B /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2E8A6BC13843896004D9518 /* Scream.mp3 */,
+				E2DD28D413819F9A005F1275 /* Blip.wav */,
+				288E724A136B58FB001CE835 /* Gameover.wav */,
+				288E7248136B2C1A001CE835 /* Shoot.wav */,
+				288E7243136B22A5001CE835 /* Select.wav */,
+				288E7244136B22A5001CE835 /* Change.wav */,
+				288E7240136B1DD0001CE835 /* Gameplay.wav */,
+				28274E38136A1D2600F1784B /* Invasores.wav */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		E2CA5F821365A0BA00C9186A = {
 			isa = PBXGroup;
 			children = (
+				28274E34136A1B2600F1784B /* AppKit.framework */,
+				28274E32136A1B1C00F1784B /* Foundation.framework */,
+				E2E8727B136786F70063A902 /* libmenu.5.4.dylib */,
+				E2E87279136786EF0063A902 /* libncurses.5.4.dylib */,
 				E2CA5F901365A0BA00C9186A /* ViaLacteum */,
 				E2CA5F8E1365A0BA00C9186A /* Products */,
 			);
@@ -58,8 +140,27 @@
 		E2CA5F901365A0BA00C9186A /* ViaLacteum */ = {
 			isa = PBXGroup;
 			children = (
-				E2CA5F911365A0BA00C9186A /* main.c */,
-				E2CA5F931365A0BA00C9186A /* ViaLacteum.1 */,
+				28274E37136A1D2600F1784B /* resources */,
+				E2C70FB71367503400B34ECB /* waves.c */,
+				E2C70FB81367503400B34ECB /* waves.h */,
+				E2CA5F911365A0BA00C9186A /* main.m */,
+				E2CA5FEF1365FF7400C9186A /* defs.h */,
+				E2CA5FF11366027000C9186A /* blit.c */,
+				E2CA5FF21366027000C9186A /* blit.h */,
+				E2CA5FF4136602D100C9186A /* util.c */,
+				E2CA5FF5136602D100C9186A /* util.h */,
+				E2C70FB11367269100B34ECB /* foe.m */,
+				E2C70FB21367269100B34ECB /* foe.h */,
+				E2C70FBA136753C100B34ECB /* fire.c */,
+				E2C70FBB136753C100B34ECB /* fire.h */,
+				28A83C5A1367910C00C4084A /* menu.m */,
+				28A83C5C1367913C00C4084A /* menu.h */,
+				28A83C5D136794EF00C4084A /* game.m */,
+				28A83C5E136794EF00C4084A /* game.h */,
+				28274E291369E41300F1784B /* pause.m */,
+				28274E2A1369E41300F1784B /* pause.h */,
+				28274E2D136A19F600F1784B /* AudioPlayer.h */,
+				28274E2E136A19F600F1784B /* AudioPlayer.m */,
 			);
 			path = ViaLacteum;
 			sourceTree = "<group>";
@@ -111,7 +212,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2CA5F921365A0BA00C9186A /* main.c in Sources */,
+				E2CA5F921365A0BA00C9186A /* main.m in Sources */,
+				E2CA5FF31366027000C9186A /* blit.c in Sources */,
+				E2CA5FF6136602D100C9186A /* util.c in Sources */,
+				E2C70FB31367269100B34ECB /* foe.m in Sources */,
+				E2C70FB91367503400B34ECB /* waves.c in Sources */,
+				E2C70FBC136753C100B34ECB /* fire.c in Sources */,
+				28A83C5B1367910D00C4084A /* menu.m in Sources */,
+				28A83C5F136794EF00C4084A /* game.m in Sources */,
+				28274E2B1369E41300F1784B /* pause.m in Sources */,
+				28274E2F136A19F600F1784B /* AudioPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +240,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -145,7 +255,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -191,6 +301,7 @@
 				E2CA5F981365A0BA00C9186A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
