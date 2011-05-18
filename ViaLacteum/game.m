@@ -331,13 +331,13 @@ int quit_game(WINDOW *term)
     
     printf("\nVoce fez %d pontos!\n", score);
   	printf("Obrigado por jogar\n");
-	printf("-= I-N-V-A-S-O-R-E-S =-\n");
+	printf("INVASORES \n");
     return 0;
 }
 
 int show_dialogs()
 {
-    mvprintw(LINES - 1, 4, "Cuidado com os cinzentos.                                     ");
+    mvprintw(LINES - 1, 4, "Eles estão por todos os lados.                                     ");
     
     return 0;
 }
