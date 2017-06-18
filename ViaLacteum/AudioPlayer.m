@@ -17,7 +17,7 @@
 {
     self = [super init];
     if (self) {
-        NSSound *mySound = [[NSSound alloc] initWithContentsOfFile:@"resources/Invasores.wav" byReference:YES]; 
+        NSSound *mySound = [[NSSound alloc] initWithContentsOfFile:@"resources/Invasores.aif" byReference:YES]; 
         [mySound play];
     }
      

@@ -73,7 +73,7 @@ void move_foe_straight_left(void *al_ptr)
 void init_foes()
 {   
     // Init sound when a foe is hit
-    zap = [[NSSound alloc] initWithContentsOfFile:@"resources/Blip.wav" byReference:YES];
+    zap = [[NSSound alloc] initWithContentsOfFile:@"resources/Blip.aif" byReference:YES];
     
    	int i;
     

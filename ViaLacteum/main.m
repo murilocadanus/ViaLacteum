@@ -110,7 +110,7 @@ void presentation()
 		wrefresh(term);
         refresh();
         
-        m_wait(DELAY + 400000);
+        m_wait(GAME_DELAY + 400000);
 
         if (animation > 1)
             animation--;
@@ -157,7 +157,7 @@ void show_credits()
 		wrefresh(term);
         refresh();
         
-        m_wait(DELAY + 400000);
+        m_wait(GAME_DELAY + 400000);
         
         if (animation > 1)
             animation--;
@@ -204,7 +204,9 @@ void load_menu()
 
 void load_main_music()
 {
-    music = [[NSSound alloc] initWithContentsOfFile:@"resources/Invasores.wav" byReference:YES];
+    music = [[NSSound alloc] initWithContentsOfFile:@"resources/Invasores.aif" byReference:YES];
+    [music setLoops:YES];
+    [music setVolume:0.5f];
     [music play];
 }
 

@@ -87,7 +87,7 @@ int move_player(WINDOW *term, int x_ofs, int y_ofs)
                     break;
                 case ' ':
                 case KEY_ENTER_:
-                    shoot = [[NSSound alloc] initWithContentsOfFile:@"resources/Shoot.wav" byReference:YES];
+                    shoot = [[NSSound alloc] initWithContentsOfFile:@"resources/Shoot.aif" byReference:YES];
                     [shoot setCurrentTime:0.0];
                     [shoot play];
                     new_fire(x+3,21, side);
@@ -228,7 +228,7 @@ void end_game(WINDOW *term, int x_ofs, int y_ofs)
 		wmove(term,0,0);
 		wrefresh(term);
         
-		m_wait(DELAY);
+		m_wait(GAME_DELAY);
         
 		delete_foes();
 		delete_fires();
@@ -267,7 +267,7 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
 		wmove(term,0,0);
 		wrefresh(term);
         
-		m_wait(DELAY);
+		m_wait(GAME_DELAY);
         
 		delete_foes();
 		delete_fires();
@@ -326,7 +326,7 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
 		wrefresh(term);
         refresh();
         
-		m_wait(DELAY + 400000);
+		m_wait(GAME_DELAY + 400000);
         wclear(term);
         j++;
     }
@@ -359,7 +359,7 @@ int show_dialogs()
 
 void load_game_over_music()
 {
-    gameOverMusic = [[NSSound alloc] initWithContentsOfFile:@"resources/Gameover.wav" byReference:YES];
+    gameOverMusic = [[NSSound alloc] initWithContentsOfFile:@"resources/Gameover.aif" byReference:YES];
     [gameOverMusic setCurrentTime:0.0];
     [gameOverMusic play];
 }
@@ -372,7 +372,7 @@ void unload_game_over_music()
 
 void load_game_music()
 {
-    gameMusic = [[NSSound alloc] initWithContentsOfFile:@"resources/Gameplay.wav" byReference:YES];
+    gameMusic = [[NSSound alloc] initWithContentsOfFile:@"resources/Gameplay.aif" byReference:YES];
     [gameMusic setCurrentTime:0.0];
     [gameMusic play];
 }
@@ -438,7 +438,7 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
 		wrefresh(term);
         refresh();
         
-        m_wait(DELAY + 400000);
+        m_wait(GAME_DELAY + 400000);
         
         if (animation > 1)
             animation--;
@@ -467,7 +467,7 @@ int game(WINDOW *term, int x_ofs, int y_ofs)
     {        
         blit_scene(get_wave_num());
         
-        m_wait(DELAY);
+        m_wait(GAME_DELAY);
 
         delete_foes();
         delete_fires();

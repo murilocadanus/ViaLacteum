@@ -14,7 +14,7 @@
 #endif
 
 #define MAXSPEED 3   /* Max speed of the ship */
-#define DELAY 40000  /* Affects game speed */
+#define GAME_DELAY 40000  /* Affects game speed */
 
 #define KEY_ESC 033  /* Escape code */
 #define KEY_ENTER_ 015  /* Enter code */

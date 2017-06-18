@@ -55,8 +55,8 @@ int pause_game(WINDOW *term, int x_ofs, int y_ofs)
 	refresh();
     
     // Open the sounds
-    NSSound *change = [[NSSound alloc] initWithContentsOfFile:@"resources/Change.wav" byReference:YES];
-    NSSound *select = [[NSSound alloc] initWithContentsOfFile:@"resources/Select.wav" byReference:YES];
+    NSSound *change = [[NSSound alloc] initWithContentsOfFile:@"resources/Change.aif" byReference:YES];
+    NSSound *select = [[NSSound alloc] initWithContentsOfFile:@"resources/Select.aif" byReference:YES];
     
 	// Post the menu
 	post_menu(my_menu);
