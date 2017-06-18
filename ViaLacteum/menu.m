@@ -20,13 +20,13 @@ int menu(WINDOW *term, int x_ofs, int y_ofs)
     noecho();
     
     SET_COLOR(COL_GREEN);
-    mvprintw( LINES - 23, 1, " ___   __    _  __   __  _______  _______  _______  ______   _______  _______ ");
-    mvprintw( LINES - 22, 1, "|   | |  |  | ||  | |  ||   _   ||       ||       ||    _ | |       ||       |");
-    mvprintw( LINES - 21, 1, "|   | |   |_| ||  |_|  ||  |_|  ||  _____||   _   ||   | || |    ___||  _____|");
-    mvprintw( LINES - 20, 1, "|   | |       ||       ||       || |_____ |  | |  ||   |_|| |   |___ | |_____ ");
-    mvprintw( LINES - 19, 1, "|   | |  _    ||       ||       ||_____  ||  |_|  ||    __| |    ___||_____  |");
-    mvprintw( LINES - 18, 1, "|   | | | |   | |     | |   _   | _____| ||       ||   |  | |   |___  _____| |");
-    mvprintw( LINES - 17, 1, "|___| |_|  |__|  |___|  |__| |__||_______||_______||___|  | |_______||_______|");
+    mvprintw( LINES - 23, 1, " ___  __    _  _________  ______   __   __  ______   _______  ______   _______ ");
+    mvprintw( LINES - 22, 1, "|   ||  |  | | |       | |    _ | |  | |  ||      \\ |       ||    _ | |       |");
+    mvprintw( LINES - 21, 1, "|   ||   |_| |   |   |   |   | || |  | |  ||   _   ||    ___||   | || |  _____|");
+    mvprintw( LINES - 20, 1, "|   ||       |   |   |   |   |_|| |  | |  ||  | |  ||   |___ |   |_|| | |_____ ");
+    mvprintw( LINES - 19, 1, "|   ||  _    |   |   |   |    __| |  |_|  ||  |_|  ||    ___||    __| |_____  |");
+    mvprintw( LINES - 18, 1, "|   || | |   |   |   |   |   |  | |       ||       ||   |___ |   |  |  _____| |");
+    mvprintw( LINES - 17, 1, "|___||_|  |__|   |___|   |___|  | |_______||______/ |_______||___|  | |_______|");
     
     
 	keypad(stdscr, TRUE);
@@ -35,9 +35,9 @@ int menu(WINDOW *term, int x_ofs, int y_ofs)
 	/* Create items */
     n_choices = 4;
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));    
-    my_items[0] = new_item((char *)"Novo Jogo", (char *)"");
-    my_items[1] = new_item((char *)"Creditos", (char *)"");
-    my_items[2] = new_item((char *)"Sair", (char *)"");
+    my_items[0] = new_item((char *)"New game", (char *)"");
+    my_items[1] = new_item((char *)"Credits", (char *)"");
+    my_items[2] = new_item((char *)"Quit", (char *)"");
     my_items[3] = new_item((char *)NULL, (char *)"");
     
 	// Crate menu
@@ -56,12 +56,12 @@ int menu(WINDOW *term, int x_ofs, int y_ofs)
     
 	// Print a border around the main window and print a title
     box(my_menu_win, 0, 0);
-	print_in_middle_menu_win_example(my_menu_win, 1, 0, 40, "Cuidado para nao ser abduzido!", COLOR_PAIR(1));
+	print_in_middle_menu_win_example(my_menu_win, 1, 0, 40, "Watch your surroundings!", COLOR_PAIR(1));
 	mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
 	mvwhline(my_menu_win, 2, 1, ACS_HLINE, 38);
 	mvwaddch(my_menu_win, 2, 39, ACS_RTEE);
-    mvprintw(LINES - 3, 4, "Pressione <ENTER> para escolher a opção desejada");
-	mvprintw(LINES - 2, 4, "Use as setas para navegar");
+    mvprintw(LINES - 3, 4, "Press <ENTER> to select a menu option");
+	mvprintw(LINES - 2, 4, "Use the arrows key to navigate");
 	refresh();
     
     // Open the sounds
@@ -91,15 +91,15 @@ int menu(WINDOW *term, int x_ofs, int y_ofs)
 			case ENTER_KEY: // Enter
                 [select setCurrentTime:0.0];
                 [select play];
-                if (strcmp(item_name(current_item(my_menu)), "Novo Jogo") == 0)
+                if (strcmp(item_name(current_item(my_menu)), "New game") == 0)
                 {
                     option_selected = NOVO_JOGO;
                 }
-                else if (strcmp(item_name(current_item(my_menu)), "Creditos") == 0)
+                else if (strcmp(item_name(current_item(my_menu)), "Credits") == 0)
                 {
                     option_selected = CREDITOS;
                 }
-                else if (strcmp(item_name(current_item(my_menu)), "Sair") == 0)
+                else if (strcmp(item_name(current_item(my_menu)), "Quit") == 0)
                 {
                     option_selected = SAIR;
                 }

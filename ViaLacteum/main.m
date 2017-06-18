@@ -68,14 +68,15 @@ void presentation()
         SET_COLOR(COL_GREEN);
         
 
-        mvwprintw(term,7+y_ofs - animation,25+x_ofs, "                                                ");
-        mvwprintw(term,8+y_ofs - animation,25+x_ofs, "  _____                                         ");
-        mvwprintw(term,9+y_ofs - animation,25+x_ofs, " |_   _|                                        ");
-        mvwprintw(term,10+y_ofs - animation,25+x_ofs,"   | |  _ ____   ____ _ ___  ___  _ __ ___ ___  ");
-        mvwprintw(term,11+y_ofs - animation,25+x_ofs,"   | | | '_ \\ \\ / / _` / __|/ _ \\| '__/ _ | __| ");
-        mvwprintw(term,12+y_ofs - animation,25+x_ofs,"  _| |_| | | \\ V / (_| \\__ \\ (_) | | |  __|__ \\ ");
-        mvwprintw(term,13+y_ofs - animation,25+x_ofs," |_____|_| |_|\\_/ \\__,_|___/\\___/|_|  \\___|___/ ");
-                          
+        mvwprintw(term,7+y_ofs - animation,25+x_ofs, "                                                 ");
+        mvwprintw(term,8+y_ofs - animation,25+x_ofs, "  _____       _                  _               ");
+        mvwprintw(term,9+y_ofs - animation,25+x_ofs, " |_   _|     | |                | |              ");
+        mvwprintw(term,10+y_ofs - animation,25+x_ofs,"   | |  _ __ | |_ _ __ _   _  __| | ___ _ __ ___ ");
+        mvwprintw(term,11+y_ofs - animation,25+x_ofs,"   | | | '_ \\| __| '__| | | |/ _` |/ _ \\ '__/ __|");
+        mvwprintw(term,12+y_ofs - animation,25+x_ofs,"  _| |_| | | | |_| |  | |_| | (_| |  __/ |  \\__ \\");
+        mvwprintw(term,13+y_ofs - animation,25+x_ofs," |_____|_| |_|\\__|_|   \\__,_|\\__,_|\\___|_|  |___/");
+        
+        
         mvwprintw(term,15+y_ofs,27+x_ofs,  "");
 
         SET_COLOR(COL_WHITE);
@@ -101,9 +102,9 @@ void presentation()
         
         SET_COLOR(COL_RED);
         if (iteraction % 2)
-            mvwprintw(term,22+y_ofs,28+x_ofs,    "Precione qualquer tecla");
+            mvwprintw(term,22+y_ofs,28+x_ofs,    "          Press any key to start");
         else
-            mvwprintw(term,22+y_ofs,28+x_ofs,    "                       ");
+            mvwprintw(term,22+y_ofs,28+x_ofs,    "                                ");
         SET_COLOR(COL_BKG);
     
         wmove(term,0,0);
@@ -132,25 +133,26 @@ void show_credits()
         SET_COLOR(COL_GREEN);
         
         
-        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                                ");
-        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "  _____                                         ");
-        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, " |_   _|                                        ");
-        mvwprintw(term, LINES - 20 + animation, 18+x_ofs,"   | |  _ ____   ____ _ ___  ___  _ __ ___ ___  ");
-        mvwprintw(term, LINES - 19 + animation, 18+x_ofs,"   | | | '_ \\ \\ / / _` / __|/ _ \\| '__/ _ | __| ");
-        mvwprintw(term, LINES - 18 + animation, 18+x_ofs,"  _| |_| | | \\ V / (_| \\__ \\ (_) | | |  __|__ \\ ");
-        mvwprintw(term, LINES - 17 + animation, 18+x_ofs," |_____|_| |_|\\_/ \\__,_|___/\\___/|_|  \\___|___/ ");
         
-        mvwprintw(term, LINES - 16 + animation, 18+x_ofs,  "                                                ");
-        mvwprintw(term, LINES - 15 + animation, 18+x_ofs,  "                                                ");
-        mvwprintw(term, LINES - 14 + animation, 18+x_ofs,  "                                                ");        
+        mvwprintw(term, LINES - 23 + animation, 18+x_ofs, "                                                  ");
+        mvwprintw(term, LINES - 22 + animation, 18+x_ofs, "  _____       _                  _                ");
+        mvwprintw(term, LINES - 21 + animation, 18+x_ofs, " |_   _|     | |                | |               ");
+        mvwprintw(term, LINES - 20 + animation, 18+x_ofs, "   | |  _ __ | |_ _ __ _   _  __| | ___ _ __ ___  ");
+        mvwprintw(term, LINES - 19 + animation, 18+x_ofs, "   | | | '_ \\| __| '__| | | |/ _` |/ _ \\ '__/ __| ");
+        mvwprintw(term, LINES - 18 + animation, 18+x_ofs, "  _| |_| | | | |_| |  | |_| | (_| |  __/ |  \\__ \\ ");
+        mvwprintw(term, LINES - 17 + animation, 18+x_ofs, " |_____|_| |_|\\__|_|   \\__,_|\\__,_|\\___|_|  |___/ ");
+        
+        mvwprintw(term, LINES - 16 + animation, 18+x_ofs,  "                                                     ");
+        mvwprintw(term, LINES - 15 + animation, 18+x_ofs,  "                                                     ");
+        mvwprintw(term, LINES - 14 + animation, 18+x_ofs,  "                                                     ");        
         
         SET_COLOR(COL_WHITE);
         
-        mvwprintw(term, LINES - 13 + animation, 28+x_ofs,  "     Desenvolvido por:   ");
+        mvwprintw(term, LINES - 13 + animation, 28+x_ofs,  "       Developed by:     ");
         mvwprintw(term, LINES - 12 + animation, 28+x_ofs,  "                         ");        
-        mvwprintw(term, LINES - 11 + animation, 28+x_ofs,  " Marlus Cadanus da Costa ");
-        mvwprintw(term, LINES - 10 + animation, 28+x_ofs,  "            e            ");
-        mvwprintw(term, LINES - 9 + animation, 28+x_ofs,   " Murilo Cadanus da Costa ");
+        mvwprintw(term, LINES - 11 + animation, 28+x_ofs,  "       Marlus Costa      ");
+        mvwprintw(term, LINES - 10 + animation, 28+x_ofs,  "            and          ");
+        mvwprintw(term, LINES - 9 + animation, 28+x_ofs,   "       Murilo Costa      ");
         mvwprintw(term, LINES - 8 + animation, 28+x_ofs,   "                         ");        
         
         wmove(term,0,0);
@@ -228,7 +230,7 @@ int main()
 	if (!right_size())
 	{
 		endwin();
-		fprintf(stderr,"Invasores roda em uma janela terminal com 80x25!\n");
+		fprintf(stderr,"Intruders runs in a terminal window with 80x25!\n");
 		return -1;
 	}
     

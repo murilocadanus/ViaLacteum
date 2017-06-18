@@ -316,11 +316,11 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
         
         
         if (j % 2)
-            mvwprintw(term, 22, 32 ,   "Você foi abduzido...");
+            mvwprintw(term, 22, 32 ,   "You have been abducted...");
         else
             mvwprintw(term, 22, 28 ,   "");
 
-        mvwprintw(term, 24, 28 , "Precione Esc para continuar... ");
+        mvwprintw(term, 24, 28 , "Press <ESC> to continue... ");
         
         wmove(term,0,0);
 		wrefresh(term);
@@ -336,7 +336,7 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
 
 void final()
 {
-	printf("\n    Parabens voce sobreviveu!\n");
+	printf("\n    Congratulations, you survived!\n");
 }
 
 int quit_game(WINDOW *term)
@@ -344,15 +344,15 @@ int quit_game(WINDOW *term)
     wrefresh(term);
     endwin();
     
-    printf("\nVoce fez %d pontos!\n", score);
-  	printf("Obrigado por jogar\n");
-	printf("INVASORES \n");
+    printf("\nYou did %d points!\n", score);
+  	printf("Thank you for playing\n");
+	printf("INTRUDERS \n");
     return 0;
 }
 
 int show_dialogs()
 {
-    mvprintw(LINES - 1, 4, "Eles estão por todos os lados.                                     ");
+    mvprintw(LINES - 1, 4, "They are everywhere.                                     ");
     
     return 0;
 }
@@ -430,9 +430,9 @@ void load_wave_presentation(WINDOW *term, int x_ofs, int y_ofs)
         SET_COLOR(COL_WHITE);
         
         mvwprintw(term, LINES - 5 + animation, 18+x_ofs,  "                                         ");
-        mvwprintw(term, LINES - 4 + animation, 18+x_ofs,  "     Os Invasores estao na sua casa!     ");        
+        mvwprintw(term, LINES - 4 + animation, 18+x_ofs,  "     The Intruders are in your house!    ");
         mvwprintw(term, LINES - 3 + animation, 18+x_ofs,  "                                         ");
-        mvwprintw(term, LINES - 2 + animation, 18+x_ofs,  "    Defenda-se para nao ser abduzido     ");                
+        mvwprintw(term, LINES - 2 + animation, 18+x_ofs,  "  Defend yourself to don't get abducted  ");
         
         wmove(term,0,0);
 		wrefresh(term);

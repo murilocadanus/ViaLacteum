@@ -27,9 +27,9 @@ int pause_game(WINDOW *term, int x_ofs, int y_ofs)
 	/* Create items */
     n_choices = 4;
     my_items = (ITEM **)calloc(n_choices, sizeof(ITEM *));    
-    my_items[0] = new_item((char *)"Continuar Jogo", (char *)"");
-    my_items[1] = new_item((char *)"Menu Principal", (char *)"");    
-    my_items[2] = new_item((char *)"Sair", (char *)"");
+    my_items[0] = new_item((char *)"Resume", (char *)"");
+    my_items[1] = new_item((char *)"Menu", (char *)"");
+    my_items[2] = new_item((char *)"Quit", (char *)"");
     my_items[3] = new_item((char *)NULL, (char *)"");
     
 	// Crate menu
@@ -48,7 +48,7 @@ int pause_game(WINDOW *term, int x_ofs, int y_ofs)
     
 	// Print a border around the main window and print a title
     box(my_menu_win, 0, 0);
-	print_in_middle_pause(my_menu_win, 1, 0, 40, "Jogo em pausa", COLOR_PAIR(1));
+	print_in_middle_pause(my_menu_win, 1, 0, 40, "Paused", COLOR_PAIR(1));
 	mvwaddch(my_menu_win, 2, 0, ACS_LTEE);
 	mvwhline(my_menu_win, 2, 1, ACS_HLINE, 38);
 	mvwaddch(my_menu_win, 2, 39, ACS_RTEE);
@@ -82,15 +82,15 @@ int pause_game(WINDOW *term, int x_ofs, int y_ofs)
                 [select setCurrentTime:0.0];
                 [select play];
                 
-                if (strcmp(item_name(current_item(my_menu)), "Continuar Jogo") == 0)
+                if (strcmp(item_name(current_item(my_menu)), "Resume") == 0)
                 {
                     option_selected = CONTINUAR_JOGO;
                 }
-                else if (strcmp(item_name(current_item(my_menu)), "Menu Principal") == 0)
+                else if (strcmp(item_name(current_item(my_menu)), "Menu") == 0)
                 {
                     option_selected = MENU_PRINCIPAL;
                 }                
-                else if (strcmp(item_name(current_item(my_menu)), "Sair") == 0)
+                else if (strcmp(item_name(current_item(my_menu)), "Quit") == 0)
                 {
                     option_selected = SAIR;
                 }

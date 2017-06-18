@@ -119,25 +119,25 @@ char *next_wave(const char *actual)
     // Sequential algorithm
 	if (actual == wave_1)
     {
-        printf("Sala de estar");
+        printf("Living room");
         next = wave_2;
         wave_num = 2;
     }
 	else if (actual == wave_2)
     {
-        printf("Garagem         ");
+        printf("Garage          ");
         next = wave_3;
         wave_num = 3;
     }
 	else if (actual == wave_3)
     {
-        printf("Cozinha         ");
+        printf("Kitchen         ");
         next = wave_4;
         wave_num = 4;
     }
 	else if (actual == wave_4)
     {
-        printf("Quarto         ");
+        printf("Bedroom         ");
         next = wave_1;
         wave_num = 1;
     }
