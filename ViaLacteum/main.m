@@ -144,7 +144,7 @@ void show_credits()
         
         mvwprintw(term, LINES - 16 + animation, 18+x_ofs,  "                                                     ");
         mvwprintw(term, LINES - 15 + animation, 18+x_ofs,  "                                                     ");
-        mvwprintw(term, LINES - 14 + animation, 18+x_ofs,  "                                                     ");        
+        mvwprintw(term, LINES - 14 + animation, 18+x_ofs,  "                                                     ");
         
         SET_COLOR(COL_WHITE);
         

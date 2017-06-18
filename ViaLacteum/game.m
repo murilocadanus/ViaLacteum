@@ -316,7 +316,7 @@ void game_over(WINDOW *term, int x_ofs, int y_ofs)
         
         
         if (j % 2)
-            mvwprintw(term, 22, 32 ,   "You have been abducted...");
+            mvwprintw(term, 22, 28 ,   "You have been abducted...");
         else
             mvwprintw(term, 22, 28 ,   "");
 
